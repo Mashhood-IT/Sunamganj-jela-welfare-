@@ -48,12 +48,12 @@ const Navbar = () => {
             ))}
           </div>
 
-          <Link to="/support-form">
-            <button className={`hidden lg:flex ${scrolled ? 'btn btn-green' : "bg-black text-white px-7 py-1.5 rounded-lg"}`}>
-              Donate Now
-              <ICONS.Heart className="w-4 h-4" fill="currentColor" />
-            </button>
-          </Link>
+        <Link to="/donation-form" className="hidden lg:flex">
+  <button className={` btn btn-green`}>
+    Donate Now
+    <ICONS.Heart className="w-4 h-4" fill="currentColor" />
+  </button>
+</Link>
           <GoogleTranslateButton/>
 
           {/* Mobile Menu Button */}
@@ -83,10 +83,12 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <button className="mt-2 btn btn-green">
+            <Link to="/donation-form" onClick={()=>setIsOpen(false)}>
+<button className="mt-2 btn btn-green w-44">
               Donate Now
               <ICONS.Heart className="w-4 h-4" fill="currentColor" />
             </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { NAV_LINKS } from "../constants/Data";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: ICONS.Facebook, href: "#" },
+    { icon: ICONS.Facebook, href: "https://www.facebook.com/people/Sunamganj-jela-welfare-Association-Uk/100064737004572/" },
     { icon: ICONS.Twitter, href: "#" },
     { icon: ICONS.Instagram, href: "#" },
     { icon: ICONS.Linkedin, href: "#" },

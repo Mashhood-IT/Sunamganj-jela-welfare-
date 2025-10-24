@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { IMAGES } from "../../assets/Images";
-import { ICONS } from "../../assets/Icons";
 import { Link, useNavigate } from "react-router-dom";
 
 const Hero = () => {
@@ -35,7 +34,6 @@ const Hero = () => {
 
     setIsSubmitting(true);
 
-    // Simulate short delay, then navigate with query params
     setTimeout(() => {
       setIsSubmitting(false);
       navigate(`/donation-form?name=${formData.name}&email=${formData.email}`);
@@ -49,38 +47,38 @@ const Hero = () => {
         style={{ backgroundImage: `url(${IMAGES.hero1})` }}
       ></div>
 
-      <div className="relative z-20 grid grid-cols-12 gap-12 items-center px-4 sm:px-6 lg:px-16 pt-32 pb-16">
+<div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center px-4 sm:px-6 lg:px-16 pt-32 pb-16">
         {/* Left Side */}
-        <div className="col-span-6 text-white">
-          <img src={IMAGES.Logo} alt="Logo" className="mb-6 max-w-xs" />
-          <h1 className="text-4xl lg:text-5xl text-black/70 font-bold mb-6 leading-tight">
-            Together, We Can Bring Hope and Change
-          </h1>
+       <div className="col-span-1 lg:col-span-6 text-white text-center lg:text-left">
+  <img src={IMAGES.Logo} alt="Logo" className="mb-6 max-w-xs mx-auto lg:mx-0" />
+  <h1 className="text-3xl lg:text-4xl xl:text-5xl text-black/70 font-bold mb-6 leading-tight">
+    Together, We Can Bring Hope and Change
+  </h1>
 
-          <ul className="flex place-items-center space-x-6 text-white font-medium">
-            <li className="hover:bg-green-600 border px-5 py-1 rounded-md transition">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="hover:bg-green-600 border px-5 py-1 rounded-md transition">
-              <Link to="/about">About Us</Link>
-            </li>
-            <li className="hover:bg-green-600 border px-5 py-1 rounded-md transition">
-              <Link to="/donations">Our Causes</Link>
-            </li>
-            <li className="hover:bg-green-600 border px-5 py-1 rounded-md transition">
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </div>
+  <ul className="flex flex-wrap justify-center lg:justify-start items-center gap-3 lg:gap-6 text-white font-medium text-sm lg:text-base">
+    <li className="hover:bg-green-600 border hover:border-transparent px-4 lg:px-5 py-1 rounded-md transition">
+      <Link to="/">Home</Link>
+    </li>
+    <li className="hover:bg-green-600 border hover:border-transparent px-4 lg:px-5 py-1 rounded-md transition">
+      <Link to="/about">About Us</Link>
+    </li>
+    <li className="hover:bg-green-600 border hover:border-transparent px-4 lg:px-5 py-1 rounded-md transition">
+      <Link to="/donations">Our Causes</Link>
+    </li>
+    <li className="hover:bg-green-600 border hover:border-transparent px-4 lg:px-5 py-1 rounded-md transition">
+      <Link to="/contact">Contact</Link>
+    </li>
+  </ul>
+</div>
 
         {/* Right Side - Simple Form */}
-        <div className="col-span-6 flex justify-end">
-          <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md">
+    <div className="col-span-1 lg:col-span-6 flex justify-center lg:justify-end">
+  <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
               Support Our Mission
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 ">
               <div>
                 <label className="block text-sm font-semibold mb-2">Full Name</label>
                 <input

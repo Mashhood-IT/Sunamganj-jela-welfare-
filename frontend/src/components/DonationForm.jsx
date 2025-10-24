@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import HeroSection from "../constants/HeroSection";
+import toast from "react-hot-toast";
 
 const DonationForm = () => {
   const location = useLocation();
@@ -23,7 +24,7 @@ const DonationForm = () => {
     }
 
     // Proceed to payment (Stripe step integration later)
-    alert(
+    toast.success(
       `Thank you ${name}! You are donating £${finalAmount} (${isRecurring ? "Recurring" : "One-time"})`
     );
   };
