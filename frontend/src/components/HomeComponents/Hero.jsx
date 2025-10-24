@@ -77,7 +77,7 @@ const Hero = () => {
       className="relative h-full flex items-center overflow-hidden"
     >
       <div  
-        className="absolute inset-0 bg-contain bg-center"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${IMAGES.hero1})` }}
       ></div>
 

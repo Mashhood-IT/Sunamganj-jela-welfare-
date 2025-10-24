@@ -110,3 +110,57 @@ export const stats = [
     bio: "Designs intuitive and engaging interfaces, blending creativity with usability principles.",
   },
 ];
+
+
+export const DONATIONS_DATA = [
+  {
+    id: 1,
+    title: "Flood Relief Donations",
+    description: "Help families affected by devastating floods rebuild their lives",
+    image: "https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg",
+    icon: ICONS.Droplets,
+    raised: 45000,
+    goal: 100000,
+    category: "Emergency"
+  },
+  {
+    id: 2,
+    title: "Self Reliance Program",
+    description: "Empower communities with skills and resources for sustainable income",
+    image: "https://images.pexels.com/photos/5691607/pexels-photo-5691607.jpeg",
+    icon: ICONS.Briefcase,
+    raised: 28000,
+    goal: 75000,
+    category: "Development"
+  },
+  {
+    id: 3,
+    title: "Clean Water Pump",
+    description: "Provide access to safe drinking water in rural communities",
+    image: "https://images.pexels.com/photos/2481526/pexels-photo-2481526.jpeg",
+    icon: ICONS.Droplets,
+    raised: 62000,
+    goal: 90000,
+    category: "Infrastructure"
+  },
+  {
+    id: 4,
+    title: "Winter Blanket Donation",
+    description: "Keep families warm during harsh winter months",
+    image: "https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg",
+    icon: ICONS.Wind,
+    raised: 18000,
+    goal: 50000,
+    category: "Seasonal"
+  },
+  {
+    id: 5,
+    title: "Healthcare Support",
+    description: "Medical assistance for underprivileged communities",
+    image: "https://images.pexels.com/photos/6127313/pexels-photo-6127313.jpeg",
+    icon: ICONS.Hospital,
+    raised: 55000,
+    goal: 120000,
+    category: "Health"
+  }
+];
