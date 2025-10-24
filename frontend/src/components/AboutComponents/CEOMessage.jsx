@@ -13,7 +13,7 @@ const CEOMessage = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Message from Our CEO</h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                "At CharitUs, we believe in the power of collective action. Every contribution, no matter the size, creates meaningful change. I'm constantly inspired by our donors' generosity and the resilience of communities we serve."
+                "At Sunamganj Jela Welfare, we believe in the power of collective action. Every contribution, no matter the size, creates meaningful change. I'm constantly inspired by our donors' generosity and the resilience of communities we serve."
               </p>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 "Our commitment is simple: transparency, impact, and dignity for all. Together, we're not just changing lives—we're building a more compassionate world."

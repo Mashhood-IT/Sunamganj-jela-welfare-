@@ -1,2 +1,66 @@
-@import "tailwindcss"
+@import "tailwindcss";
 
+:root {
+  --main-green-color: #00A162;
+  --main-orange-color: #FEAA53;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-green {
+  background-color: var(--main-green-color);
+  color: white;
+}
+.btn-green:hover {
+  background-color: #008b55;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0px;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+#google_translate_element select {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 8px 6px;
+  border: 1px solid var(--light-gray);
+}
+
+.goog-te-gadget {
+  font-size: 0 !important;
+}
+
+.goog-te-gadget span {
+  display: none !important;
+}

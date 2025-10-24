@@ -8,7 +8,7 @@ const AboutSection = () => {
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Founded in 2018, CharitUs emerged from a simple belief: everyone deserves access to basic necessities and opportunities for growth. What started as a small community initiative has grown into a global movement.
+              Founded in 2014, Sunamganj Jela Welfare emerged from a simple belief: everyone deserves access to basic necessities and opportunities for growth. What started as a small community initiative has grown into a global movement.
             </p>
             <p className="text-gray-600 leading-relaxed">
               Today, we connect generous donors with meaningful causes, ensuring transparency and maximum impact. Every donation creates ripples of positive change across communities worldwide.

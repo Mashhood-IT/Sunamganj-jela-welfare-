@@ -86,23 +86,23 @@ const About = () => {
 
           <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             <div className="inline-block mb-4">
-              <span className="text-[#065f46] font-semibold text-sm uppercase tracking-wider bg-[#065f46]/10 px-4 py-2 rounded-full">
+              <span className="text-(--main-green-color) font-semibold text-sm uppercase tracking-wider bg-[#065f46]/10 px-4 py-2 rounded-full">
                 About Us
               </span>
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              About{' '}
+              About
               <span className="relative inline-block">
                 <span className="relative z-10 bg-linear-to-br from-[#065f46] to-[#10b981] bg-clip-text text-transparent">
-                  CharitUs
+                  Sunamganj Jela Welfare
                 </span>
                 <span className="absolute bottom-2 left-0 w-full h-3 bg-[#10b981]/20 z-0" />
               </span>
             </h2>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-4">
-              CharitUs is a nonprofit organization dedicated to improving lives through sustainable community development programs. Founded in 2018, we work tirelessly to address critical issues like education, healthcare, and access to clean water.
+              Sunamganj Jela Welfare is a nonprofit organization dedicated to improving lives through sustainable community development programs. Founded in 2018, we work tirelessly to address critical issues like education, healthcare, and access to clean water.
             </p>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
@@ -123,7 +123,7 @@ const About = () => {
                     style={{ transitionDelay: `${100 + index * 100}ms` }}
                   >
                     <div className="w-10 h-10 bg-[#065f46]/10 rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#065f46] transition-colors duration-300">
-                      <Icon className="w-5 h-5 text-[#065f46] group-hover:text-white transition-colors duration-300" />
+                      <Icon className="w-5 h-5 text-(--main-green-color) group-hover:text-white transition-colors duration-300" />
                     </div>
                     <div className="text-2xl font-bold text-gray-900 mb-1">
                       {displayValue}
@@ -142,7 +142,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-[#064e3b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </button>
               
-              <button className="px-6 py-3 cursor-pointer border-2 border-[#065f46] text-[#065f46] rounded-full font-semibold hover:bg-[#065f46] hover:text-white transition-all duration-300 hover:scale-105">
+              <button className="px-6 py-3 cursor-pointer border-2 border-[#065f46] text-(--main-green-color) rounded-full font-semibold hover:bg-[#065f46] hover:text-white transition-all duration-300 hover:scale-105">
                 View Impact Report
               </button>
             </div>

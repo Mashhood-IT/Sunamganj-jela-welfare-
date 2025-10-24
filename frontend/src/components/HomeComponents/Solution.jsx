@@ -33,8 +33,8 @@ const Solution = () => {
             className="
               inline-flex cursor-pointer items-center justify-center
               rounded-3xl border px-5 py-2 text-sm md:text-base
-              text-white border-emerald-400/70 backdrop-blur
-              hover:bg-emerald-500/20 hover:border-emerald-400 transition
+              text-white border-(--main-green-color)/70 backdrop-blur
+              hover:bg-(--main-green-color)/20 hover:border-(--main-green-color) transition
             "
           >
             Solution
