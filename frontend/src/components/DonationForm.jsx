@@ -1,176 +1,108 @@
-import React, { useState } from 'react';
-import { Heart, DollarSign, CreditCard, Mail, User } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import HeroSection from "../constants/HeroSection";
 
 const DonationForm = () => {
-  const [amount, setAmount] = useState('25');
-  const [custom, setCustom] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const presets = [25, 50, 100, 250];
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const name = queryParams.get("name");
+  const email = queryParams.get("email");
 
-  const handleDonate = () => {
-    const finalAmount = amount === 'custom' ? custom : amount;
-    if (!finalAmount || !name || !email) {
-      alert('Please fill all fields');
+  const [amount, setAmount] = useState("");
+  const [customAmount, setCustomAmount] = useState("");
+  const [isRecurring, setIsRecurring] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleNext = (e) => {
+    e.preventDefault();
+
+    const finalAmount = amount || customAmount;
+    if (!finalAmount || Number(finalAmount) <= 0) {
+      setError("Please enter a valid donation amount");
       return;
     }
-    alert(`Thank you ${name} for donating $${finalAmount}!`);
+
+    // Proceed to payment (Stripe step integration later)
+    alert(
+      `Thank you ${name}! You are donating £${finalAmount} (${isRecurring ? "Recurring" : "One-time"})`
+    );
   };
 
- return (
-  <section id="donate" className="py-20 px-6 bg-gray-50">
-    <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          const finalAmount = amount === "custom" ? custom : amount;
-          if (!finalAmount || !name || !email) {
-            alert("Please fill in all required fields.");
-            return;
-          }
-          alert(`Thank you ${name} for donating $${finalAmount}!`);
-        }}
-        className="p-8 space-y-8"
-      >
-        <div >
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Choose your donation amount
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
-            {[25, 50, 100, 250].map((preset) => (
+  const presetAmounts = [10, 25, 50, 100];
+
+  return (<>
+  <HeroSection title="Support Us" description='this is sample description for support page' />
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
+      <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-lg">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
+          Choose Your Donation
+        </h2>
+
+        <p className="text-center text-gray-600 mb-6">
+          Donating as <span className="font-semibold">{name}</span> ({email})
+        </p>
+
+        <form onSubmit={handleNext} className="space-y-5">
+          {/* Preset Amounts */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {presetAmounts.map((amt) => (
               <button
-                key={preset}
+                key={amt}
                 type="button"
-                onClick={() => setAmount(preset.toString())}
-                className={`py-3 rounded-lg border-2 font-semibold transition-all
-                  ${
-                    amount === preset.toString()
-                      ? "bg-[#065f46] text-white border-[#065f46]"
-                      : "bg-white text-gray-800 border-gray-300 hover:border-[#065f46]"
-                  }`}
+                onClick={() => {
+                  setAmount(amt);
+                  setCustomAmount("");
+                }}
+                className={`py-3 border rounded-lg text-center transition ${
+                  amount === amt
+                    ? "bg-green-600 text-white border-green-600"
+                    : "border-gray-300 text-gray-700 hover:bg-green-50"
+                }`}
               >
-                ${preset}
+                £{amt}
               </button>
             ))}
           </div>
 
-          <button
-            type="button"
-            onClick={() => setAmount("custom")}
-            className={`w-full py-3 px-4 rounded-lg border-2 font-semibold transition-all
-              ${
-                amount === "custom"
-                  ? "bg-[#065f46] text-white border-[#065f46]"
-                  : "bg-white text-gray-800 border-gray-300 hover:border-[#065f46]"
-              }`}
-          >
-            Enter Custom Amount
-          </button>
+          {/* Custom Amount */}
+          <input
+            type="number"
+            placeholder="£ Custom Amount"
+            value={customAmount}
+            onChange={(e) => {
+              setCustomAmount(e.target.value);
+              setAmount("");
+            }}
+            className="w-full border rounded-lg p-2"
+          />
 
-          {amount === "custom" && (
-            <div className="mt-3 relative">
-              <DollarSign className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-              <input
-                type="number"
-                value={custom}
-                onChange={(e) => setCustom(e.target.value)}
-                placeholder="Enter custom amount"
-                className="w-full pl-10 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#065f46] focus:outline-none"
-              />
-            </div>
-          )}
-        </div>
-
-        {/* Step 2: Recurring Option */}
-        <div className="flex items-center gap-3">
-          <input type="checkbox" id="recurring" className="w-5 h-5 accent-[#065f46]" />
-          <label htmlFor="recurring" className="text-gray-700 font-medium">
-            Make this a recurring monthly donation
-          </label>
-        </div>
-
-        {/* Step 3: Donor Information */}
-        <div className="border-t pt-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Your Information</h3>
-
-          <div className="grid sm:grid-cols-2 gap-6">
-            <div className="relative">
-              <User className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Full Name"
-                className="w-full pl-10 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#065f46] focus:outline-none"
-              />
-            </div>
-
-            <div className="relative">
-              <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email Address"
-                className="w-full pl-10 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#065f46] focus:outline-none"
-              />
-            </div>
-          </div>
-
-          <div className="mt-6">
-            <label className="block text-gray-700 font-medium mb-2">Message (optional)</label>
-            <textarea
-              rows={3}
-              placeholder="Leave a message with your donation"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#065f46] focus:outline-none"
-            />
-          </div>
-        </div>
-
-        {/* Step 4: Payment Info */}
-        <div className="border-t pt-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Payment Information</h3>
-
-          <div className="relative mb-4">
-            <CreditCard className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+          {/* Recurring Checkbox */}
+          <div className="flex items-center space-x-2 mt-2">
             <input
-              type="text"
-              placeholder="Card Number"
-              className="w-full pl-10 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#065f46] focus:outline-none"
+              type="checkbox"
+              id="recurring"
+              checked={isRecurring}
+              onChange={() => setIsRecurring((prev) => !prev)}
+              className="w-4 h-4"
             />
+            <label htmlFor="recurring" className="text-gray-700 text-sm">
+              Make this a recurring monthly donation
+            </label>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="MM/YY"
-              className="px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#065f46] focus:outline-none"
-            />
-            <input
-              type="text"
-              placeholder="CVV"
-              className="px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#065f46] focus:outline-none"
-            />
-          </div>
-        </div>
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
-        {/* Step 5: Final CTA */}
-        <div className="pt-6">
           <button
             type="submit"
-            className="w-full bg-[#065f46] text-white py-4 rounded-lg font-semibold text-lg hover:bg-[#064e3b] transition-all"
+            className="w-full mt-4 bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
           >
-            Complete Donation
+            Continue →
           </button>
-          <p className="text-xs text-gray-500 mt-3 text-center">
-            🔒 Secure transaction — your data is protected with 256-bit encryption.
-          </p>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </section>
-);
-
+    </>
+  );
 };
 
 export default DonationForm;

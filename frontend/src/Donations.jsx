@@ -3,6 +3,7 @@ import { useState } from "react";
 import { DONATIONS_DATA } from "./constants/Data";
 import CampaignDetails from "./components/HomeComponents/CampaignDetails";
 import { ICONS } from "./assets/Icons";
+import HeroSection from "./constants/HeroSection";
 
 const Donations = () => {
   const [selectedCampaign, setSelectedCampaign] = useState(null);
@@ -12,6 +13,8 @@ const Donations = () => {
   }
 
   return (
+    <>
+  <HeroSection title="Our Campaigns" description='this is sample description for Campaigns page' />
     <div className="min-h-screen bg-gray-50 py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
@@ -51,7 +54,7 @@ const Donations = () => {
                     </div>
                   </div>
 
-                  <button onClick={() => setSelectedCampaign(campaign)} className="w-full py-3 rounded-lg font-semibold text-white flex items-center justify-center gap-2 hover:opacity-90 transition-opacity" style={{ backgroundColor: 'var(--main-green-color)' }}>
+                  <button onClick={() => setSelectedCampaign(campaign)} className="btn btn-green">
                     Learn More & Donate
                     <ICONS.ArrowRight className="w-5 h-5" />
                   </button>
@@ -62,6 +65,8 @@ const Donations = () => {
         </div>
       </div>
     </div>
+    </>
+
   );
 };
 

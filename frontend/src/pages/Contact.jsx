@@ -237,21 +237,7 @@ const Contact = ({
                 )}
               </div>
 
-              {/* Subscribe checkbox */}
-              <div className="col-span-2 flex items-center gap-3">
-                <input
-                  id="subscribe"
-                  name="subscribe"
-                  type="checkbox"
-                  checked={form.subscribe}
-                  onChange={handleChange}
-                  className="w-4 h-4 text-(--main-green-color) border-gray-300 rounded"
-                />
-                <label htmlFor="subscribe" className="text-sm text-gray-700">
-                  Subscribe to updates and newsletter
-                </label>
-              </div>
-
+           
               <div className="col-span-2 flex items-center gap-4">
                 <button
                   type="submit"

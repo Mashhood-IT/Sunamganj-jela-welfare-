@@ -37,19 +37,19 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
-                className={`relative px-4 py-2 ${scrolled ? "text-black" : "text-white"}  font-medium transition-colors duration-300 hover:text-(--main-green-color) group`}
+                to={link.href}
+                className={`relative px-4 py-2 ${scrolled ? "text-black" : "text-white"}  font-medium transition-colors duration-300 ${scrolled ? 'hover:text-(--main-green-color)' : "hover:text-black" } group`}
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#065f46] group-hover:w-full transition-all duration-300" />
-              </a>
+              </Link>
             ))}
           </div>
 
           <Link to="/support-form">
-            <button className="hidden lg:flex btn btn-green">
+            <button className={`hidden lg:flex ${scrolled ? 'btn btn-green' : "bg-black text-white px-7 py-1.5 rounded-lg"}`}>
               Donate Now
               <ICONS.Heart className="w-4 h-4" fill="currentColor" />
             </button>
@@ -73,15 +73,15 @@ const Navbar = () => {
         >
           <div className="flex flex-col  gap-2 pb-4">
             {NAV_LINKS.map((link, index) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 onClick={() => setIsOpen(false)}
                 className={`px-4 py-3 ${scrolled ? "text-black" : "text-white"} font-medium  hover:text-(--main-green-color) rounded-lg transition-all duration-300`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <button className="mt-2 btn btn-green">
               Donate Now

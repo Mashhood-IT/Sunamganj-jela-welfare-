@@ -4,7 +4,7 @@ import { IMAGES } from "../assets/Images";
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
-  { label: 'Causes', href: '#causes' },
+  { label: 'Causes', href: '/donations' },
   { label: 'Contact', href: '/contact' }
 ];
 
@@ -39,9 +39,9 @@ export const CAUSES_DATA = [
 // FAQ Data
  export   const faqs = [
      {
-       question: "What is Charit Us?",
+       question: "What is Sunamganj Jela Welfare?",
        answer:
-         "Charit Us is a global charity organization dedicated to connecting donors with impactful projects that improve lives and communities worldwide.",
+         "Sunamganj Jela Welfare is a global charity organization dedicated to connecting donors with impactful projects that improve lives and communities worldwide.",
      },
      {
        question: "How can I make a donation?",
@@ -51,7 +51,7 @@ export const CAUSES_DATA = [
      {
        question: "Are my donations tax-deductible?",
        answer:
-         "Yes! Charit Us is a registered nonprofit organization, and your donations may be tax-deductible depending on your country’s laws. You’ll receive an email receipt after donating.",
+         "Yes! Sunamganj Jela Welfare is a registered nonprofit organization, and your donations may be tax-deductible depending on your country’s laws. You’ll receive an email receipt after donating.",
      },
      {
        question: "Can I choose where my donation goes?",
@@ -59,7 +59,7 @@ export const CAUSES_DATA = [
          "Absolutely. You can browse our active causes and select which campaign or project your donation supports.",
      },
      {
-       question: "How does Charit Us ensure transparency?",
+       question: "How does Sunamganj Jela Welfare ensure transparency?",
        answer:
          "We regularly update donors with project reports, photos, and impact summaries. Every contribution is tracked, and 100% transparency is maintained at each step.",
      },

@@ -1,5 +1,6 @@
 import React from "react";
 import { IMAGES } from "../../assets/Images";
+import { Link } from "react-router-dom";
 
 const Solution = () => {
   return (
@@ -28,17 +29,18 @@ const Solution = () => {
             NALA works to break the chain of transmission by mobilizing the
             community to be the architects of their own health.
           </p>
-
+<Link to='/donations'>
           <button
             className="
-              inline-flex cursor-pointer items-center justify-center
-              rounded-3xl border px-5 py-2 text-sm md:text-base
-              text-white border-(--main-green-color)/70 backdrop-blur
-              hover:bg-(--main-green-color)/20 hover:border-(--main-green-color) transition
+            inline-flex cursor-pointer items-center justify-center
+            rounded-3xl border px-5 py-2 text-sm md:text-base
+            text-white border-(--main-green-color)/70 backdrop-blur
+            hover:bg-(--main-green-color)/20 hover:border-(--main-green-color) transition
             "
-          >
+            >
             Solution
           </button>
+            </Link>
         </div>
       </div>
     </section>

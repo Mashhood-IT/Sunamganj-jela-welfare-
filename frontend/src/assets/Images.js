@@ -1,5 +1,5 @@
 export const IMAGES = {
-  Logo: "./logo.png",
+  Logo: "./logo.webp",
    hero1: './donation1.webp',
    hero: 'https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1920',
 heroCarousel: [

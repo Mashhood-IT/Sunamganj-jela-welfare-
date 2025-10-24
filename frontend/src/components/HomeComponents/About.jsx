@@ -102,7 +102,7 @@ const About = () => {
             </h2>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-4">
-              Sunamganj Jela Welfare is a nonprofit organization dedicated to improving lives through sustainable community development programs. Founded in 2018, we work tirelessly to address critical issues like education, healthcare, and access to clean water.
+              Sunamganj Jela Welfare is a nonprofit organization dedicated to improving lives through sustainable community development programs. Founded in 2014, we work tirelessly to address critical issues like education, healthcare, and access to clean water.
             </p>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-8">

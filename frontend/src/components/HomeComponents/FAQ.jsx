@@ -18,7 +18,7 @@ const FAQ = () => {
           Frequently Asked Questions
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Have questions about Charit Us or how your donations make an impact?
+          Have questions about Sunamganj Jela Welfare or how your donations make an impact?
           We&apos;ve got you covered.
         </p>
       </div>
