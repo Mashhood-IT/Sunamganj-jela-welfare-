@@ -48,12 +48,11 @@ const Navbar = () => {
             ))}
           </div>
 
-        <Link to="/donation-form" className="hidden lg:flex">
-  <button className={` btn btn-green`}>
-    Donate Now
-    <ICONS.Heart className="w-4 h-4" fill="currentColor" />
-  </button>
-</Link>
+      <Link to="/membershipform" onClick={()=>setIsOpen(false)}>
+<button className="mt-2 btn btn-green w-full">
+              Become a Member
+            </button>
+            </Link>
           <GoogleTranslateButton/>
 
           {/* Mobile Menu Button */}
@@ -83,10 +82,9 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Link to="/donation-form" onClick={()=>setIsOpen(false)}>
-<button className="mt-2 btn btn-green w-44">
-              Donate Now
-              <ICONS.Heart className="w-4 h-4" fill="currentColor" />
+            <Link to="/membershipform" onClick={()=>setIsOpen(false)}>
+<button className="mt-2 btn btn-green w-full">
+              Become a Member
             </button>
             </Link>
           </div>
