@@ -131,7 +131,7 @@ export default function MembershipForm() {
       }
 
       const response = await axios.post(
-        "http://localhost:5000/api/create-member",
+        `${import.meta.env.VITE_API_URL}/create-member`,
         formDataToSend,
         {
           headers: {

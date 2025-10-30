@@ -47,7 +47,7 @@ const Contact = ({
 
     setSubmitting(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/contact/create-message", form);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/contact/create-message`, form);
       if (res.status !== 201) {
         throw new Error(res.data?.message || "Failed to send message");
       }

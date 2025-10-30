@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 
 const stripePromise = loadStripe("pk_test_12345"); // TODO: Replace with your real publishable key
 
@@ -10,12 +11,13 @@ export default function StripeCheckout({ amount, name, email, isRecurring, onSuc
   useEffect(() => {
     async function fetchIntent() {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/stripe/create-payment-intent", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount, name, email, isRecurring }),
-      });
-      const data = await res.json();
+     const res = await axios.post(`${import.meta.env.VITE_API_URL}/stripe/create-payment-intent`, {
+    amount,
+    name,
+    email,
+    isRecurring,
+  });
+      const data = await res.data;
       setClientSecret(data.clientSecret);
       setLoading(false);
     }
