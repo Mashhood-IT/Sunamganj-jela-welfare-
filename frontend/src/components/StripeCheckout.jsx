@@ -1,38 +1,85 @@
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import { Elements, PaymentElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
+import toast from "react-hot-toast";
 
-const stripePromise = loadStripe("pk_test_12345"); // TODO: Replace with your real publishable key
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
-export default function StripeCheckout({ amount, name, email, isRecurring, onSuccess }) {
+function CheckoutForm({ onSuccess, amount }) {
+  const stripe = useStripe();
+  const elements = useElements();
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!stripe || !elements) return;
+
+    setLoading(true);
+    const { error } = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        return_url: `${import.meta.env.VITE_API_URL}/`,
+      },
+    });
+
+    if (error) {
+      toast.error(error.message);
+      setLoading(false);
+    } else {
+      toast.success("Payment successful!");
+      onSuccess();
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <PaymentElement />
+      <button
+        type="submit"
+        disabled={!stripe || loading}
+        className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition disabled:opacity-50"
+      >
+        {loading ? "Processing..." : `Pay £${amount}`}
+      </button>
+    </form>
+  );
+}
+
+export default function StripeCheckout({ amount,currency, name, email, isRecurring, onSuccess }) {
   const [clientSecret, setClientSecret] = useState("");
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+useEffect(() => {
     async function fetchIntent() {
       setLoading(true);
-     const res = await axios.post(`${import.meta.env.VITE_API_URL}/stripe/create-payment-intent`, {
-    amount,
-    name,
-    email,
-    isRecurring,
-  });
-      const data = await res.data;
-      setClientSecret(data.clientSecret);
-      setLoading(false);
+      try {
+        const res = await axios.post(`${import.meta.env.VITE_API_URL}/stripe/create-payment-intent`, {
+          amount,
+          currency,
+          name,
+          email,
+          isRecurring,
+        });
+        setClientSecret(res.data.clientSecret);
+      } catch (err) {
+        toast.error("Failed to initialize payment");
+      } finally {
+        setLoading(false);
+      }
     }
     fetchIntent();
-  }, [amount, name, email, isRecurring]);
+  }, [amount, currency, name, email, isRecurring]);
 
-  if (loading) return <div>Loading payment...</div>;
-  if (!clientSecret) return <div>Unable to initialize payment.</div>;
+
+
+  if (loading) return <div className="text-center py-8">Loading payment...</div>;
+  if (!clientSecret) return <div className="text-center py-8 text-red-500">Unable to initialize payment.</div>;
 
   return (
-    <div>
-      {/* Stripe Elements UI here */}
-      <p>Stripe payment UI goes here. (Integrate Stripe Elements)</p>
-      {/* For demo, just show a success button */}
-      <button onClick={onSuccess} className="bg-green-600 text-white px-4 py-2 rounded">Simulate Payment Success</button>
-    </div>
+    <Elements stripe={stripePromise} options={{ clientSecret }}>
+      <CheckoutForm onSuccess={onSuccess} amount={amount} />
+    </Elements>
   );
 }
+

@@ -4,7 +4,10 @@ import { NAV_LINKS } from "../constants/Data";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: ICONS.Facebook, href: "https://www.facebook.com/people/Sunamganj-jela-welfare-Association-Uk/100064737004572/" },
+    {
+      icon: ICONS.Facebook,
+      href: "https://www.facebook.com/people/Sunamganj-jela-welfare-Association-Uk/100064737004572/",
+    },
     { icon: ICONS.Twitter, href: "#" },
     { icon: ICONS.Instagram, href: "#" },
     { icon: ICONS.Linkedin, href: "#" },
@@ -19,7 +22,9 @@ const Footer = () => {
         <div>
           <div className="flex items-center gap-2 mb-4">
             <img src={IMAGES.Logo} height={100} width={100} alt="" />
-            <span className="text-lg text-(--main-orange-color) font-semibold ">Sunamganj Jela Welfare</span>
+            <span className="text-lg text-(--main-orange-color) font-semibold ">
+              Sunamganj Jela Welfare
+            </span>
           </div>
           <p className="text-gray-300 text-sm leading-relaxed">
             Empowering communities through compassion, sustainability, and
@@ -92,28 +97,29 @@ const Footer = () => {
             Subscribe to our newsletter and never miss updates on upcoming
             campaigns.
           </p>
-         <form className="flex items-stretch bg-white/10 border border-white/20 rounded-full overflow-hidden w-full max-w-sm">
-  <input
-    type="email"
-    placeholder="Your email"
-    className="flex-1 bg-transparent px-4 py-2 text-sm text-gray-200 placeholder-gray-400 focus:outline-none"
-  />
-  <button
-    type="submit"
-    className="bg-(--main-green-color) cursor-pointer  text-white text-sm font-semibold px-5 py-2 rounded-r-full transition-colors"
-  >
-    Subscribe
-  </button>
-</form>
-
+          <form className="flex items-stretch bg-white/10 border border-white/20 rounded-full overflow-hidden w-full max-w-sm">
+            <input
+              type="email"
+              placeholder="Your email"
+              className="flex-1 bg-transparent px-4 py-2 text-sm text-gray-200 placeholder-gray-400 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="bg-(--main-green-color) cursor-pointer  text-white text-sm font-semibold px-5 py-2 rounded-r-full transition-colors"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
 
       <div className="mt-12 border-t border-white/10 pt-6 text-center text-gray-400 text-sm">
         <p>
-          &copy; {new Date().getFullYear()}{" "}
-          <span className="text-white font-medium">Sunamganj Jela Welfare</span>. All rights
-          reserved.
+          &copy; {new Date().getFullYear()}
+          <span className="text-white font-medium ml-1">
+            Sunamganj Jela Welfare
+          </span>
+          . All rights reserved.
         </p>
       </div>
     </footer>

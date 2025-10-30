@@ -14,7 +14,7 @@ const App = () => {
       <Toaster  />
       <Routes>
         <Route path="/" element={<AppLayout />}>
-          <Route index element={<Home />} />{" "}
+          <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/membershipform" element={<MemberShipPage />} />
           <Route path="/donations" element={<Donations />} />

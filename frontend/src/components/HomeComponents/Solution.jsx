@@ -25,22 +25,26 @@ const Solution = () => {
           </h1>
 
           <p className="text-white/90 text-sm md:text-base leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
-            Through the development of novel and cost-effective interventions,
-            NALA works to break the chain of transmission by mobilizing the
-            community to be the architects of their own health.
+            We provide hope to people who need it the most through our work. A
+            lot of families in Sunamganj continue to experience loss and
+            poverty. We attempt to bring some light into their life. We also
+            take care of the Bangladeshi community in the UK. We make them feel
+            united, confident and proud.Change is brought by every little thing,
+            book, meal, visit. It makes individuals remember that they are not
+            the only ones. Our purpose is simple. To help. To heal. To care
           </p>
-<Link to='/donations'>
-          <button
-            className="
+          <Link to="/donations">
+            <button
+              className="
             inline-flex cursor-pointer items-center justify-center
             rounded-3xl border px-5 py-2 text-sm md:text-base
             text-white border-(--main-green-color)/70 backdrop-blur
             hover:bg-(--main-green-color)/20 hover:border-(--main-green-color) transition
             "
             >
-            Solution
-          </button>
-            </Link>
+              Solution
+            </button>
+          </Link>
         </div>
       </div>
     </section>
