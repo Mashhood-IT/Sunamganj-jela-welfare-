@@ -1,32 +1,33 @@
 import { useState } from "react";
+import axios from "axios";
 import { ICONS } from "../assets/Icons";
 import HeroSection from "../constants/HeroSection";
+import toast from "react-hot-toast";
 
 const Contact = ({
 }) => {
   const [form, setForm] = useState({
-    name: "",
+    fullName: "",
     email: "",
     phone: "",
     subject: "",
     message: "",
     subscribe: false,
   });
-  const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState(null);
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim()) e.name = "Name is required";
+    if (!form.fullName.trim()) e.fullName = "Name is required";
     if (!form.email.trim()) e.email = "Email is required";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "Enter a valid email";
     if (form.phone && !/^[0-9+\-\s()]{6,20}$/.test(form.phone))
       e.phone = "Enter a valid phone number";
     if (!form.subject.trim()) e.subject = "Subject is required";
-    if (!form.message.trim() || form.message.length < 10)
-      e.message = "Message should be at least 10 characters";
+    if (!form.message.trim() || form.message.length < 5)
+      e.message = "Message should be at least 5 characters";
     return e;
   };
 
@@ -38,38 +39,31 @@ const Contact = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus(null);
-    const eobj = validate();
-    setErrors(eobj);
-    if (Object.keys(eobj).length) return;
+  const eobj = validate();
+  if (Object.keys(eobj).length) {
+    toast.error(Object.values(eobj)[0]);
+    return;
+  }
 
     setSubmitting(true);
     try {
-      const res = await fetch(apiPath, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (!res.ok) {
-        const payload = await res.json().catch(() => ({}));
-        throw new Error(payload.message || "Failed to send message");
+      const res = await axios.post("http://localhost:5000/api/contact/create-message", form);
+      if (res.status !== 201) {
+        throw new Error(res.data?.message || "Failed to send message");
       }
 
       setStatus({ type: "success", message: "Message sent — thank you!" });
       setForm({
-        name: "",
+        fullName: "",
         email: "",
         phone: "",
         subject: "",
         message: "",
         subscribe: false,
       });
-      setErrors({});
+      toast.success("Message sent — thank you!");
     } catch (err) {
-      setStatus({
-        type: "error",
-        message: err.message || "Something went wrong. Please try again.",
-      });
+      toast.error(err.message || "Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -170,7 +164,7 @@ const Contact = ({
               {[
                 {
                   label: "Full name",
-                  name: "name",
+                  name: "fullName",
                   type: "text",
                   placeholder: "Your name",
                 },
@@ -203,15 +197,9 @@ const Contact = ({
                     value={form[name]}
                     onChange={handleChange}
                     placeholder={placeholder}
-                    className={`w-full rounded-lg px-4 py-2 border text-gray-900 placeholder-gray-400 focus:outline-none ${
-                      errors[name] ? "border-red-400" : "border-gray-300"
-                    }`}
+                    className={`w-full rounded-lg px-4 py-2 border text-gray-900 placeholder-gray-400 focus:outline-none `}
                   />
-                  {errors[name] && (
-                    <div className="text-red-500 text-xs mt-1">
-                      {errors[name]}
-                    </div>
-                  )}
+                 
                 </div>
               ))}
 
@@ -226,15 +214,9 @@ const Contact = ({
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Write your message..."
-                  className={`w-full rounded-lg px-4 py-3 border text-gray-900 placeholder-gray-400 focus:outline-none ${
-                    errors.message ? "border-red-400" : "border-gray-300"
-                  }`}
+                  className={`w-full rounded-lg px-4 py-3 border text-gray-900 placeholder-gray-400 focus:outline-none `}
                 />
-                {errors.message && (
-                  <div className="text-red-500 text-xs mt-1">
-                    {errors.message}
-                  </div>
-                )}
+              
               </div>
 
            
@@ -246,17 +228,7 @@ const Contact = ({
                 >
                   {submitting ? "Sending..." : "Send message"}
                 </button>
-                {status && (
-                  <p
-                    className={`text-sm ${
-                      status.type === "success"
-                        ? "text-(--main-green-color)"
-                        : "text-red-500"
-                    }`}
-                  >
-                    {status.message}
-                  </p>
-                )}
+               
               </div>
             </form>
           </div>

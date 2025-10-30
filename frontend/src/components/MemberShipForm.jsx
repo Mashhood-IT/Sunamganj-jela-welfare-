@@ -412,6 +412,7 @@ export default function MembershipForm() {
                 </label>
                 <input
                   type="number"
+                  disabled={!isCompanyUser}
                   name="membershipFee"
                   value={formData.membershipFee}
                   onChange={handleChange}

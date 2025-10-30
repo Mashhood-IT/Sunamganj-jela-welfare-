@@ -7,7 +7,7 @@ import Contact from "./pages/Contact";
 import Donations from "./Donations";
 import DonationForm from "./components/DonationForm";
 import { Toaster } from "react-hot-toast";
-import MembershipForm from "./components/MemberShipForm";
+import MemberShipPage from "./pages/MemberShipPage";
 const App = () => {
   return (
     <div>
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />{" "}
           <Route path="/about" element={<About />} />
-          <Route path="/membershipform" element={<MembershipForm />} />
+          <Route path="/membershipform" element={<MemberShipPage />} />
           <Route path="/donations" element={<Donations />} />
           <Route path="/donation-form" element={<DonationForm />} />
           <Route path="/contact" element={<Contact />} />

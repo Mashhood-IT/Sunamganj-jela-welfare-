@@ -55,19 +55,24 @@ const Hero = () => {
     Together, We Can Bring Hope and Change
   </h1>
 
-  <ul className="flex flex-wrap justify-center lg:justify-start items-center gap-3 lg:gap-6 text-white font-medium text-sm lg:text-base">
-    <li className="hover:bg-green-600 border hover:border-transparent px-4 lg:px-5 py-1 rounded-md transition">
-      <Link to="/">Home</Link>
-    </li>
-    <li className="hover:bg-green-600 border hover:border-transparent px-4 lg:px-5 py-1 rounded-md transition">
-      <Link to="/about">About Us</Link>
-    </li>
-    <li className="hover:bg-green-600 border hover:border-transparent px-4 lg:px-5 py-1 rounded-md transition">
-      <Link to="/donations">Our Causes</Link>
-    </li>
-    <li className="hover:bg-green-600 border hover:border-transparent px-4 lg:px-5 py-1 rounded-md transition">
-      <Link to="/contact">Contact</Link>
-    </li>
+  <ul className="flex flex-wrap justify-center lg:justify-start items-center gap-4 lg:gap-8 mt-2 mb-4">
+    {[
+      { to: "/", label: "Home" },
+      { to: "/about", label: "About Us" },
+      { to: "/donations", label: "Our Causes" },
+      { to: "/contact", label: "Contact" },
+      { to: "/membershipform", label: "Become a Member" },
+    ].map(({ to, label }) => (
+      <li key={to}>
+        <Link
+          to={to}
+          className="px-6 py-1 rounded-xl font-semibold text-base shadow-md border-2 border-white bg-white/90 text-green-700 hover:bg-[var(--main-green-color)] hover:text-white hover:border-[var(--main-green-color)] transition-all duration-200 focus:outline-none "
+         
+        >
+          {label}
+        </Link>
+      </li>
+    ))}
   </ul>
 </div>
 
