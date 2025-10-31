@@ -7,6 +7,7 @@ import MissionVision from './components/HomeComponents/MissionVision'
 import Impact from './components/HomeComponents/Impact'
 import Services from './components/HomeComponents/Services'
 import GetInvolved from './components/HomeComponents/GetInvolved'
+import Future from './components/HomeComponents/Future'
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
     <Impact />
     <Solution />
     <GetInvolved />
+    <Future />
     <FAQ />
     </div>
   )

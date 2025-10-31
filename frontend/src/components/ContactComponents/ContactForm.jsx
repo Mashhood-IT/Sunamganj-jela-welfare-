@@ -71,10 +71,9 @@ const ContactForm = () => {
 
   return (
     <div>
-      <main className="bg-gray-50 text-gray-900">
-        <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-            <div className="bg-white p-6 rounded-xl shadow-md lg:col-span-1">
+      <main className=" text-gray-900">
+          <div className="">
+            {/* <div className="bg-white p-6 rounded-xl shadow-md lg:col-span-1">
               <div className="flex items-center gap-3 mb-4">
                 <ICONS.Heart className="w-8 h-8 text-(--main-green-color)" />
                 <div>
@@ -144,10 +143,10 @@ const ContactForm = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Contact Form */}
-            <div className="bg-white p-6 rounded-xl shadow-md lg:col-span-2">
+            <div className="bg-white p-6 rounded-xl ">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 Send us a message
               </h3>
@@ -229,9 +228,7 @@ const ContactForm = () => {
             </div>
           </div>
 
-          {/* Map */}
-          {/* Map */}
-          <div className="mt-10 rounded-xl overflow-hidden shadow border">
+          {/* <div className="mt-10 rounded-xl overflow-hidden shadow border">
             <iframe
               title="Sunamganj Jela Welfare Office Location"
               src="https://www.google.com/maps?q=304+Commercial+Road,+London,+England,+E1+2PY&output=embed"
@@ -259,8 +256,7 @@ const ContactForm = () => {
                 Open in Google Maps
               </a>
             </div>
-          </div>
-        </section>
+          </div> */}
       </main>
     </div>
   );

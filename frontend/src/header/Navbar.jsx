@@ -3,6 +3,7 @@ import { ICONS } from "../assets/Icons";
 import { NAV_LINKS } from "../constants/Data";
 import { Link } from "react-router-dom";
 import GoogleTranslateButton from "../components/GoogleTranslateButton";
+import { IMAGES } from "../assets/Images";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -21,17 +22,11 @@ const Navbar = () => {
         scrolled ? " bg-white  shadow-lg py-3" : "  backdrop-blur-sm py-4"
       }`}
     >
-      {/* #00A162 green  */}
-      {/* #FEAA53 orange  */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
-            {/* <img src={IMAGES.Logo} alt="" height={150} width={150} /> */}
-
-            <h1 className=" font-semibold text-(--main-orange-color) w-64">
-              Sunamgonj Jela Welfare Association UK
-            </h1>
+            <img src={IMAGES.Logo1} alt="" height={150} width={150} />
           </a>
 
           {/* Desktop Navigation */}
@@ -40,20 +35,28 @@ const Navbar = () => {
               <Link
                 key={link.label}
                 to={link.href}
-                className={`relative px-4 py-2 ${scrolled ? "text-black" : "text-white"}  font-medium transition-colors duration-300 ${scrolled ? 'hover:text-(--main-green-color)' : "hover:text-black" } group`}
+                className={`relative px-4 py-2 ${
+                  scrolled ? "text-black" : "text-white"
+                }  font-medium transition-colors duration-300 ${
+                  scrolled
+                    ? "hover:text-(--main-green-color)"
+                    : "hover:text-black"
+                } group`}
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#065f46] group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
           </div>
+<div className="flex items-center gap-2">
 
-      <Link to="/membershipform" onClick={()=>setIsOpen(false)}>
-<button className="mt-2 btn btn-green w-full">
+          <Link to="/membershipform" onClick={() => setIsOpen(false)}>
+            <button className=" btn btn-green w-full">
               Become a Member
             </button>
-            </Link>
-          <GoogleTranslateButton/>
+          </Link>
+          <GoogleTranslateButton />
+</div>
 
           {/* Mobile Menu Button */}
           <button
@@ -76,16 +79,18 @@ const Navbar = () => {
                 key={link.label}
                 to={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`px-4 py-3 ${scrolled ? "text-black" : "text-white"} font-medium  hover:text-(--main-green-color) rounded-lg transition-all duration-300`}
+                className={`px-4 py-3 ${
+                  scrolled ? "text-black" : "text-white"
+                } font-medium  hover:text-(--main-green-color) rounded-lg transition-all duration-300`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {link.label}
               </Link>
             ))}
-            <Link to="/membershipform" onClick={()=>setIsOpen(false)}>
-<button className="mt-2 btn btn-green w-full">
-              Become a Member
-            </button>
+            <Link to="/membershipform" onClick={() => setIsOpen(false)}>
+              <button className=" btn btn-green w-full">
+                Become a Member
+              </button>
             </Link>
           </div>
         </div>

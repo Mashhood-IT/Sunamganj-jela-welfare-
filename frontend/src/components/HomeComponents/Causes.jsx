@@ -19,10 +19,6 @@ const  Causes = () => {
                   <div className="progress-bar">
                     <div className="progress-fill" style={{ width: `${progress}%` }}></div>
                   </div>
-                  <div className="cause-stats">
-                    <span className="cause-raised">${cause.raised.toLocaleString()} raised</span>
-                    <span className="cause-goal">of ${cause.goal.toLocaleString()}</span>
-                  </div>
                   <button className="btn btn-primary btn-full">Donate Now</button>
                 </div>
               </div>

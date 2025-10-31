@@ -10,10 +10,8 @@ const AppLayout = () => {
   [pathname])
   return (
     <div >
-      {pathname !== "/" &&
       <Navbar />
-      }
-      <div >
+        <div >
         <Outlet />
       </div>
       <Footer />

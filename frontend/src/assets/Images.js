@@ -1,4 +1,6 @@
 export const IMAGES = {
+  Logo1: "./jela.webp",
+  donatoinHands: "./donationHands.webp",
   Logo: "./logo.webp",
   FR: "./FR.webp",
   CWP: "./CWP.webp",
