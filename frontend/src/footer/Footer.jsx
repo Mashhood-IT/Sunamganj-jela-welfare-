@@ -130,7 +130,7 @@ const handleSubmit = async (e) => {
             />
             <button
               type="submit"
-              className="bg-(--main-green-color) cursor-pointer  text-white text-sm font-semibold px-5 py-2 rounded-r-full transition-colors"
+              className="bg-(--main-green-color) cursor-pointer  text-white text-sm font-semibold px-4 py-2 rounded-r-full transition-colors"
             >
               Subscribe
             </button>
