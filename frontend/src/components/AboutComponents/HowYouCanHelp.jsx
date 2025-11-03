@@ -1,9 +1,9 @@
 export default function HowYouCanHelp() {
   return (
     <section className="bg-white py-16">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-black mb-6 text-center">How You Can Help</h2>
-        <p className="text-center text-gray-700 mb-8 text-lg">You can join us in many ways. Every bit of help creates hope.</p>
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-black mb-6">How You Can Help</h2>
+        <p className="text-gray-700 mb-8 text-lg">You can join us in many ways. Every bit of help creates hope.</p>
         <ul className="space-y-6 mb-8">
           <li className="text-gray-800 text-base md:text-lg"><strong>Volunteer</strong> with your time or skills.</li>
           <li className="text-gray-800 text-base md:text-lg"><strong>Donate</strong> to support education and welfare projects.</li>

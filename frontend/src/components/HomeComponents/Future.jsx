@@ -24,14 +24,14 @@ const Future = () => {
            A Future of Hope
           </h1>
 
-          <p className="text-white/90 text-xl  leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+          <p className="text-white/90 lg:text-xl text-md  leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
               At <span className="font-bold">Sunamganj Jela Welfare Association UK</span>, we believe in unity.
             We believe that love is stronger than distance. Each project we complete brings us closer to our dream —
             a dream of a world where kindness has no border. We promise to keep serving with honesty and heart. Our journey will continue — for every
             child, every family, and every life that needs care.Together, we can build a brighter tomorrow for
            Sunamganj and beyond.
           </p>
-          <p className="font-bold text-2xl text-center text-(--main-orange-color)">
+          <p className="font-bold lg:text-2xl text-lg text-center text-(--main-orange-color)">
             Join us. Walk with us, be part of the change today.
           </p>
           <Link to="/contact">

@@ -48,7 +48,7 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-<div className="flex items-center gap-2">
+<div className="hidden lg:flex items-center gap-2">
 
           <Link to="/membershipform" onClick={() => setIsOpen(false)}>
             <button className=" btn btn-green w-full">

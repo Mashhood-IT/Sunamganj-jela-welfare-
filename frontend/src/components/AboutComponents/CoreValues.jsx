@@ -41,7 +41,7 @@ export default function CoreValues() {
         </p>
 
         {/* Minimalist horizontal timeline, no cards */}
-        <div className="relative flex flex-col md:flex-row items-start md:items-center justify-center w-full gap-0 md:gap-0">
+        <div className="relative flex flex-col md:flex-row lg:items-start  items-center justify-center w-full gap-0 md:gap-0">
           {/* Connecting line */}
           <div className="hidden md:block absolute left-0 right-0 top-10 h-0.5 bg-indigo-200" style={{zIndex:0, width:'100%'}}></div>
           {values.map((value, idx) => (

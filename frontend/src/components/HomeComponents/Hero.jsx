@@ -61,27 +61,8 @@ const Hero = () => {
             Together for Humanity, Hope, and Progress
           </h1>
 
-          <ul className="flex flex-wrap justify-center lg:justify-start items-center gap-4 lg:gap-8 mt-2 mb-4">
-            {[
-              { to: "/", label: "Home" },
-              { to: "/about", label: "About Us" },
-              { to: "/donations", label: "Our Causes" },
-              { to: "/contact", label: "Contact" },
-              { to: "/membershipform", label: "Become a Member" },
-            ].map(({ to, label }) => (
-              <li key={to}>
-                <Link
-                  to={to}
-                  className="px-6 py-1 rounded-xl font-semibold text-base shadow-md border-2 border-white bg-white/90 text-green-700 hover:bg-[var(--main-green-color)] hover:text-white hover:border-[var(--main-green-color)] transition-all duration-200 focus:outline-none "
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+      
         </div>
-
-        {/* Right Side - Simple Form */}
         <div className="col-span-1 lg:col-span-6 flex justify-center lg:justify-end">
           <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
