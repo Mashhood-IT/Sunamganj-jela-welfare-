@@ -8,18 +8,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? " bg-white  shadow-lg py-3" : "  backdrop-blur-sm py-4"
+        scrolled ? " bg-white  shadow-lg py-3" : "  bg-white  py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +28,7 @@ const Navbar = () => {
                 key={link.label}
                 to={link.href}
                 className={`relative px-4 py-2 ${
-                  scrolled ? "text-black" : "text-white"
+                  scrolled ? "text-black" : "text-black"
                 }  font-medium transition-colors duration-300 ${
                   scrolled
                     ? "hover:text-(--main-green-color)"

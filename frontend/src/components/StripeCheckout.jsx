@@ -16,18 +16,23 @@ function CheckoutForm({ onSuccess, amount }) {
     if (!stripe || !elements) return;
 
     setLoading(true);
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        return_url: `${import.meta.env.VITE_API_URL}/`,
-      },
-    });
+const { error, paymentIntent } = await stripe.confirmPayment({
+  elements,
+  redirect: "if_required",
+});
+
+if (error) {
+  toast.error(error.message);
+  setLoading(false);
+} else if (paymentIntent && paymentIntent.status === "succeeded") {
+  setLoading(false);
+  onSuccess();
+}
 
     if (error) {
       toast.error(error.message);
       setLoading(false);
     } else {
-      toast.success("Payment successful!");
       onSuccess();
     }
   };

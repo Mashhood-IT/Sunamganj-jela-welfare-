@@ -95,40 +95,46 @@ export const stats = [
 
 export const teamMembers = [
   {
-    name: "John Doe",
-    role: "Software Engineer",
-    img: "https://readymadeui.com/team-1.webp",
-    bio: "Expert in full-stack development with 10+ years of experience building scalable web applications.",
+    name: "Aman Ali",
+    role: "ChairPerson",
+    img: IMAGES.Chairperson,
   },
   {
-    name: "Mark Adair",
-    role: "Backend Developer",
-    img: "https://readymadeui.com/team-2.webp",
-    bio: "Specializes in Node.js and cloud infrastructure, ensuring performance and reliability.",
+    name: "Neazul Islam Chowdhury",
+    role: "General Secretary",
+    img: IMAGES.GS,
   },
   {
-    name: "Simon Konecki",
-    role: "UI/UX Designer",
-    img: "https://readymadeui.com/team-3.webp",
-    bio: "Crafts seamless user experiences with a focus on accessibility and aesthetics.",
+    name: "Anwar  Kamal Dulal",
+    role: "Joint Secretary",
+    img: IMAGES.JS,
   },
   {
-    name: "Sophia",
-    role: "Frontend Developer",
-    img: "https://readymadeui.com/team-4.webp",
-    bio: "Turns designs into responsive, user-friendly interfaces using modern web technologies.",
+    name: "Bodor Udding",
+    role: "Vice ChairPerson",
+    img: IMAGES.VCP,
   },
   {
-    name: "Alen",
-    role: "Software Engineer",
-    img: "https://readymadeui.com/team-5.webp",
-    bio: "Passionate about clean code and continuous learning, experienced in both web and mobile development.",
+    name: "Mashuk Ahmed Sardar",
+    role: "1st Joint Secretary",
+    img: IMAGES.JS3,
   },
   {
-    name: "Eleanor",
-    role: "Web Designer",
-    img: "https://readymadeui.com/team-6.webp",
-    bio: "Designs intuitive and engaging interfaces, blending creativity with usability principles.",
+    name: "Shafiq Ahmad",
+    role: "Treasurer",
+    img: IMAGES.Treasurer,
+  },
+  {
+    name: "Md Raju Miah",
+
+    role: "Joint Secretary",
+    img: IMAGES.JS2,
+  },
+  {
+    name: "Ataur Rahman Ansar",
+
+    role: "Joint Secretary",
+    img: IMAGES.JS1,
   },
 ];
 
@@ -190,33 +196,35 @@ export const DONATIONS_DATA = [
 
 export  const campaignContent = {
     1: {
-      text: [
-        "Devastating floods have displaced thousands of families, destroying homes and livelihoods. Your donation helps provide immediate relief including emergency shelter, food supplies, and clean water.",
-        "Funds will be used for temporary housing, food packages, medical assistance, and rebuilding essential infrastructure in affected areas."
-      ]
+      text: ["Floods affect thousands of families in the Sunamganj District yearly. Houses are lost, streets are destroyed, and lives are disrupted. It is heartbreaking to see the extent of losses people make when the water floods.",
+              "We attempt to restore hope at Sunamganj Jela Welfare Association UK. Food, clean water, and shelter are our starting point in the flood relief work. We reach villages at the time when they need assistance most. When the flood is over, we assist the families in the rebuilding process.",
+              "Every donation assists a parent in feeding a child or repairing a roof that is in bad condition. It helps them have the strength to begin afresh. There is nothing we can do to stop the rain, but we can all alleviate the suffering it causes. Any act of kindness will make some person nearer to security and comfort. Disasters demolish, yet goodwill restores."]
     },
     2: {
       text: [
-        "Our Self Reliance Program trains individuals in sustainable skills like tailoring, carpentry, and small business management. We provide tools and mentorship to help families become financially independent.",
-        "Your support creates lasting change by breaking the cycle of poverty through education and entrepreneurship."
+        "It is our opinion that the most helpful one is the lasting one. The Self-Reliance Program empowers individuals to work and live comfortably. Families rely on haphazard jobs in most areas of Sunamganj. Once that ceases, hunger sets in. We train skills in this program that generate a stable income. Women are taught tailoring and minor trades. Men acquire art and agricultural skills. We also assist families in starting a small business.",
+
+        "This work changes lives. It provides individuals with something better than money. It provides them with pride and meaning. They are no longer the ones waiting to be helped, but they turn out to be the help. The Sunamganj Jela Welfare Association UK is undertaking this program with love and patience. Each individual whom we train is a seed of change in their society."
       ]
     },
     3: {
       text: [
-        "Millions lack access to clean drinking water, leading to preventable diseases. We install solar-powered water pumps in remote villages, providing reliable access to safe water year-round.",
-        "Each pump serves an entire community and includes maintenance training for local residents to ensure long-term sustainability."
+        "Water is life. Safe water is difficult to access in most regions of Sunamganj. Individuals travel long distances to collect it. There are occasions when they become ill due to the water they drink. Our Clean Water Pump Project constructs water pumps in rural settings. Each pump provides clean drinking water for dozens of families. It saves them time (hours spent walking), makes them healthier, and guards against illnesses.",
+        "Joy prevails when a new pump comes to the village. Mothers worry less. Children drink without fear. Life is made easier in a manner that can never be expressed through words. The project itself is not complicated but effective. Clean water provides individuals with time to work, learn, and live. It turns struggle into relief."
       ]
     },
     4: {
       text: [
-        "Winter brings life-threatening cold to vulnerable families living in temporary shelters. Your donation provides warm blankets, winter clothing, and heating supplies to protect children and elderly from harsh conditions.",
-        "Each blanket donation package includes thermal blankets, warm clothes, and basic heating materials for a family of five."
+        "Night temperatures in Sunamganj may be freezing cold. A lot of individuals lack warm clothes and blankets to cover themselves. Children and the older generation are the worst hit when winter strikes. The Winter Blanket Donation Drive provides warmth to the people who need it the most. We take blankets, jackets, and winter packages and deliver them to the district villages. Every blanket we send out reminds a person that he is not forgotten.",
+        "It might be a trivial matter, yet to a person who is lying on a cold floor, it would be life. The affection is love, Bangladeshi community love, in the UK. It makes people remember that compassion can not be separated by distance.",
+        "Hope is restored to a weary heart when a blanket falls on two cold hands.",
       ]
     },
     5: {
       text: [
-        "Healthcare remains inaccessible for many underprivileged communities. We provide free medical camps, essential medicines, and emergency treatments for those who cannot afford basic healthcare.",
-        "Your contribution funds mobile health clinics, medication supplies, and specialist consultations in underserved areas."
+        "Health is precious. In its absence, it all goes astray. A good number of families in Sunamganj are unable to pay money to buy medicine or a doctor visit. There are those who are too far to hospitals to seek help.",
+        "It is our Healthcare Support Program that assists individuals in such cases. We offer medicines, treatment expenses, and health education. We are quick in case of an emergency. Our volunteers provide relief and also refer patients to hospitals. We also concern ourselves with the Bangladeshi people in the UK. We assist individuals in locating a local healthcare center and directing them to welfare provisions. All people are entitled to care regardless of their place of residence.",
+        "Every time that we assist a person to be healed, we obtain the same peace. Health brings back dignity. It empowers individuals to have a dream once more.",
       ]
     }
   };

@@ -36,7 +36,6 @@ const Donations = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {DONATIONS_DATA.map((campaign) => {
               const Icon = campaign.icon;
-              const progress = (campaign.raised / campaign.goal) * 100;
 
               return (
                 <div
@@ -70,25 +69,7 @@ const Donations = () => {
 
                     <p className="text-gray-600 mb-4">{campaign.description}</p>
 
-                    <div className="mb-4">
-                      <div className="flex justify-between text-sm mb-2">
-                        <span className="text-gray-600">
-                          Raised: ${campaign.raised.toLocaleString()}
-                        </span>
-                        <span className="font-semibold text-gray-900">
-                          Goal: ${campaign.goal.toLocaleString()}
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div
-                          className="h-2 rounded-full"
-                          style={{
-                            width: `${progress}%`,
-                            backgroundColor: "var(--main-green-color)",
-                          }}
-                        ></div>
-                      </div>
-                    </div>
+                
 
                     <button
                       onClick={() => setSelectedCampaign(campaign)}

@@ -81,17 +81,29 @@ const About = () => {
                 : "opacity-0 -translate-x-12"
             }`}
           >
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-linear-to-r from-[#065f46] to-[#10b981] rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 blur-xl" />
+            <div>
 
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="grid grid-cols-2 gap-4">
                 <img
                   src={IMAGES.about}
                   alt="Our mission"
                   loading="lazy"
-                  className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
+                <img
+                  src={IMAGES.about2}
+                  alt="Our mission"
+                  loading="lazy"
+                />
+                <img
+                  src={IMAGES.about3}
+                  alt="Our mission"
+                  loading="lazy"
+                />
+                <img
+                  src={IMAGES.about4}
+                  alt="Our mission"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>

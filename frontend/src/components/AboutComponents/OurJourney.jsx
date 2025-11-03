@@ -19,8 +19,8 @@ export default function OurJourney() {
         </p>
 
         <p className="text-gray-700 leading-relaxed text-lg mb-6">
-          That slow beginning developed into
-          <span className="font-bold text-(--main-green-color)">
+          That slow beginning developed into{" "} 
+           <span className="font-bold text-(--main-green-color)">
             Sunamganj Jela Welfare Association UK
           </span>
           . What started as a group of volunteers has developed to be a reliable

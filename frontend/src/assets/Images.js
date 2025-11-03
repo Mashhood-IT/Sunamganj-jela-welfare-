@@ -1,5 +1,14 @@
 export const IMAGES = {
   Logo1: "./jela.webp",
+  Chairperson: "./Chairperson.webp",
+  // Team 
+  GS: "./GS.webp",
+  JS: "./JS.webp",
+  JS1: "./JS1.webp",
+  JS2: "./JS2.webp",
+  JS3: "./JS3.webp",
+  Treasurer: "./Treasurer.webp",
+  VCP: "./VCP.webp",
   donatoinHands: "./donationHands.webp",
   Logo: "./logo.webp",
   FR: "./FR.webp",
@@ -11,7 +20,19 @@ export const IMAGES = {
   hero: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1920",
 
   about:
-    "https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "./aboutus.webp",  
+  about2:
+  "./about2.webp",  
+  about3:
+  "./about3.webp",  
+  about4:
+  "./about4.webp",  
+  ourstory:
+  "./ourstory.webp",  
+  ourstory2:
+  "./ourstory2.webp",  
+  ourstory3:
+  "./ourstory3.webp",  
   cause1:
     "https://images.pexels.com/photos/8277092/pexels-photo-8277092.jpeg?auto=compress&cs=tinysrgb&w=800",
   cause2:

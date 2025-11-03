@@ -1,8 +1,26 @@
+import axios from "axios";
 import { ICONS } from "../assets/Icons";
 import { IMAGES } from "../assets/Images";
 import { NAV_LINKS } from "../constants/Data";
+import toast from "react-hot-toast";
+import { useState } from "react";
 
 const Footer = () => {
+  const [form, setForm] = useState({ email: "", subscribe: true });
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await axios.post(
+      `${import.meta.env.VITE_API_URL}/contact/create-message`,
+      form
+    );
+    toast.success("Subscribed successfully!");
+    setForm({ email: "", subscribe: true }); // Clear form
+  } catch (error) {
+    console.log(error);
+    toast.error("Subscription failed. Please try again.");
+  }
+};
   const socialLinks = [
     {
       icon: ICONS.Facebook,
@@ -97,10 +115,17 @@ const Footer = () => {
             Subscribe to our newsletter and never miss updates on upcoming
             campaigns.
           </p>
-          <form className="flex items-stretch bg-white/10 border border-white/20 rounded-full overflow-hidden w-full max-w-sm">
+          <form
+            onSubmit={handleSubmit}
+            className="flex items-stretch bg-white/10 border border-white/20 rounded-full overflow-hidden w-full max-w-sm"
+          >
             <input
               type="email"
+              name="email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
               placeholder="Your email"
+              required
               className="flex-1 bg-transparent px-4 py-2 text-sm text-gray-200 placeholder-gray-400 focus:outline-none"
             />
             <button

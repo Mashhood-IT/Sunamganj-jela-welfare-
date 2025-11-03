@@ -1,4 +1,5 @@
 import React from "react";
+import { IMAGES } from "../../assets/Images";
 const CEOMessage = () => {
   return (
     <section className="py-20 px-4 bg-gray-50">
@@ -6,21 +7,18 @@ const CEOMessage = () => {
         <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <img 
-              src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400" 
+              src={IMAGES.Chairperson} 
               alt="CEO" 
               className="w-48 h-48 rounded-full object-cover shadow-md"
             />
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Message from Our CEO</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Message from Our Chairperson</h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                "At Sunamganj Jela Welfare, we believe in the power of collective action. Every contribution, no matter the size, creates meaningful change. I'm constantly inspired by our donors' generosity and the resilience of communities we serve."
-              </p>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                "Our commitment is simple: transparency, impact, and dignity for all. Together, we're not just changing lives—we're building a more compassionate world."
+                "I am determined to look ahead, seek opportunities, prospects and progress. We should not be looking back, except to learn from our shortcomings and press ahead to build a brighter future. We must uphold constitutional rule, bring amendments where necessary, respect the traditions and long-lasting practices of the organisation. The past practices often set the direction for the future."
               </p>
               <div>
-                <p className="font-semibold text-gray-900">Sarah Mitchell</p>
-                <p className="text-gray-500">Chief Executive Officer</p>
+                <p className="font-semibold text-gray-900">Arman Ali</p>
+                <p className="text-gray-500">Chairperson</p>
               </div>
             </div>
           </div>

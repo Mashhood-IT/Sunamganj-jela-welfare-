@@ -13,41 +13,26 @@ const Team = () => {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-4 2xl:grid-cols-5 md:grid-cols-2 gap-6 mt-10 ">
-        {teamMembers.map(({ name, role, img, bio }) => (
-          <div
-            key={name}
-            className="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
-          >
-            <img
-              src={img}
-              alt={name}
-              height={300}
-              width={340}
-              className="  object-contain "
-            />
-            <div className="p-3">
-              <h4 className="text-sm font-semibold text-slate-900">{name}</h4>
-              <p className="text-xs text-slate-500 mt-0.5">{role}</p>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed line-clamp-3">
-                {bio}
-              </p>
-
-              <div className="flex gap-2 mt-3">
-                <button className="w-6 h-6 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700">
-                  <ICONS.Facebook className="w-3.5 h-3.5 text-white" />
-                </button>
-                <button className="w-6 h-6 flex items-center justify-center rounded-full bg-sky-400 hover:bg-sky-500">
-                  <ICONS.Twitter className="w-3.5 h-3.5 text-white" />
-                </button>
-                <button className="w-6 h-6 flex items-center justify-center rounded-full bg-[#0077b5] hover:bg-[#0055b5]">
-                  <ICONS.Linkedin className="w-3.5 h-3.5 text-white" />
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
+ <div className="grid lg:grid-cols-4 grid-cols-1 gap-8 mt-10 ">
+  {teamMembers.map(({ name, role, img }) => (
+    <div
+      key={name}
+      className="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 transition-all duration-300"
+    >
+      <div className="relative">
+        <img
+          src={img}
+          alt={name}
+          className="w-20 h-20 rounded-full object-cover border-4 border-gray-100 shadow-md"
+        />
       </div>
+      <div className="flex flex-col">
+        <h4 className="text-lg font-bold text-gray-900">{name}</h4>
+        <p className="text-sm text-gray-600">{role}</p>
+      </div>
+    </div>
+  ))}
+</div>
     </section>
   );
 };

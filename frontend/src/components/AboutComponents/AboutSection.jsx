@@ -1,5 +1,6 @@
 import React from "react";
 import { ICONS } from "../../assets/Icons";
+import { IMAGES } from "../../assets/Images";
 const AboutSection = () => {
   return (
     <section className="py-20 px-4 bg-white">
@@ -28,11 +29,25 @@ const AboutSection = () => {
               neighbors.
             </p>
           </div>
-          <img
-            src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="Our Mission"
-            className="rounded-lg shadow-lg w-full h-80 object-cover"
-          />
+          <div>
+            <div className="flex items-center gap-5 mb-6">
+              <img
+                src={IMAGES.ourstory2}
+                alt="Our Mission"
+                className="rounded-lg"
+              />
+              <img
+                src={IMAGES.ourstory3}
+                alt="Our Mission"
+                className="rounded-lg"
+              />
+            </div>
+            <img
+              src={IMAGES.ourstory}
+              alt="Our Mission"
+              className="rounded-lg ml-3"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -4,7 +4,6 @@ const contactMessageSchema = new mongoose.Schema(
   {
     fullName: {
       type: String,
-      required: true,
     },
     email: {
       type: String,
@@ -16,11 +15,13 @@ const contactMessageSchema = new mongoose.Schema(
     },
     subject: {
       type: String,
-      required: true,
     },
     message: {
       type: String,
-      required: true,
+    },
+    subscribe: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true }
