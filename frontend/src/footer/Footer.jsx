@@ -35,7 +35,7 @@ const handleSubmit = async (e) => {
     <footer className="relative bg-black text-gray-100 py-8">
       <div className="absolute inset-0 bg-[url('/texture.svg')] opacity-5 pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="relative z-10 2xl:max-w-[1780px] lg:max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Brand Info */}
         <div>
           <div className="flex items-center gap-2 mb-4">

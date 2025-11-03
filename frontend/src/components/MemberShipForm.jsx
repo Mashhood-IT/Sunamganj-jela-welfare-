@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import StripeCheckout from "./StripeCheckout";
 export default function MembershipForm() {
   const [formData, setFormData] = useState({
     title: "Mr",
@@ -28,7 +29,8 @@ export default function MembershipForm() {
   const [signaturePreview, setSignaturePreview] = useState(null);
   const [signatureIsPDF, setSignatureIsPDF] = useState(false);
   const [signaturePDFName, setSignaturePDFName] = useState("");
-
+  const [showPayment, setShowPayment] = useState(false);
+  const [pendingFormData, setPendingFormData] = useState(null);
   const isCompanyUser = false;
 
   const handleChange = (e) => {
@@ -75,104 +77,150 @@ export default function MembershipForm() {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!formData.declarationAccepted) {
-      toast("You must accept the declaration.", {
-        icon: "⚠️",
-        style: {
-          background: "#fff7e6",
-          color: "#b45309",
-          border: "1px solid #facc15",
+  const validateFileSize = () => {
+  const maxSize = 5 * 1024 * 1024;
+  const files = [
+    { file: formData.picture, name: "Profile Picture" },
+    { file: formData.signatureOfApplicant, name: "Signature of Applicant" },
+    { file: formData.signatureOfApprover, name: "Signature of Approver" }
+  ];
+
+  for (const { file, name } of files) {
+    if (file && file.size > maxSize) {
+      toast.error(`${name} is too large. Maximum size is 5MB.`, {
+        duration: 4000,
+      });
+      return false;
+    }
+  }
+  return true;
+};
+
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+if (!formData.declarationAccepted) {
+    toast("You must accept the declaration.", {
+      icon: "⚠️",
+      style: {
+        background: "#fff7e6",
+        color: "#b45309",
+        border: "1px solid #facc15",
+      },
+    });
+    return;
+  }
+
+  // Validate file sizes before proceeding to payment
+  if (!validateFileSize()) {
+    return;
+  }
+
+  // Store form data and show payment form
+  setPendingFormData(formData);
+  setShowPayment(true);
+};
+const handlePaymentSuccess = async () => {
+  try {
+    const formDataToSend = new FormData();
+
+    formDataToSend.append("title", pendingFormData.title);
+    formDataToSend.append("fullName", pendingFormData.fullName);
+    formDataToSend.append("gender", pendingFormData.gender);
+    formDataToSend.append("ukAddress", pendingFormData.ukAddress);
+    formDataToSend.append("postcode", pendingFormData.postcode);
+    formDataToSend.append("email", pendingFormData.email);
+    formDataToSend.append("mobile", pendingFormData.mobile);
+    formDataToSend.append("landline", pendingFormData.landline);
+    formDataToSend.append("membershipFee", pendingFormData.membershipFee);
+    formDataToSend.append("receivedBy", pendingFormData.receivedBy);
+    formDataToSend.append("declarationAccepted", pendingFormData.declarationAccepted);
+
+    formDataToSend.append("bangladeshAddress[village]", pendingFormData.village);
+    formDataToSend.append("bangladeshAddress[postOffice]", pendingFormData.postOffice);
+    formDataToSend.append("bangladeshAddress[upazela]", pendingFormData.upazela);
+
+    if (pendingFormData.picture) {
+      formDataToSend.append("picture", pendingFormData.picture);
+    }
+    if (pendingFormData.signatureOfApplicant) {
+      formDataToSend.append("signatureOfApplicant", pendingFormData.signatureOfApplicant);
+    }
+    if (pendingFormData.signatureOfApprover) {
+      formDataToSend.append("signatureOfApprover", pendingFormData.signatureOfApprover);
+    }
+
+     await axios.post(
+      `${import.meta.env.VITE_API_URL}/create-member`,
+      formDataToSend,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
         },
-      });
-      return;
-    }
-
-    try {
-      const formDataToSend = new FormData();
-
-      formDataToSend.append("title", formData.title);
-      formDataToSend.append("fullName", formData.fullName);
-      formDataToSend.append("gender", formData.gender);
-      formDataToSend.append("ukAddress", formData.ukAddress);
-      formDataToSend.append("postcode", formData.postcode);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("mobile", formData.mobile);
-      formDataToSend.append("landline", formData.landline);
-      formDataToSend.append("membershipFee", formData.membershipFee);
-      formDataToSend.append("receivedBy", formData.receivedBy);
-      formDataToSend.append(
-        "declarationAccepted",
-        formData.declarationAccepted
-      );
-
-      formDataToSend.append("bangladeshAddress[village]", formData.village);
-      formDataToSend.append(
-        "bangladeshAddress[postOffice]",
-        formData.postOffice
-      );
-      formDataToSend.append("bangladeshAddress[upazela]", formData.upazela);
-
-      if (formData.picture) {
-        formDataToSend.append("picture", formData.picture);
       }
-      if (formData.signatureOfApplicant) {
-        formDataToSend.append(
-          "signatureOfApplicant",
-          formData.signatureOfApplicant
-        );
-      }
-      if (formData.signatureOfApprover) {
-        formDataToSend.append(
-          "signatureOfApprover",
-          formData.signatureOfApprover
-        );
-      }
+    );
 
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/create-member`,
-        formDataToSend,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+    toast.success("Payment successful! Application submitted.");
 
-      console.log("Membership created:", response.data);
-      toast.success("Application submitted successfully!");
-
-      setFormData({
-        title: "Mr",
-        fullName: "",
-        gender: "Male",
-        picture: null,
-        ukAddress: "",
-        postcode: "",
-        email: "",
-        mobile: "",
-        landline: "",
-        village: "",
-        postOffice: "",
-        upazela: "",
-        membershipFee: 20,
-        receivedBy: "",
-        signatureOfApplicant: null,
-        declarationAccepted: false,
-      });
-      setPicturePreview(null);
-      setSignaturePreview(null);
-
-      e.target.reset();
-    } catch (error) {
-      console.error("Error submitting membership:", error);
-      toast.error("Error submitting form: " + error.message);
-    }
-  };
-
-  return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
+    // Reset form
+    setFormData({
+      title: "Mr",
+      fullName: "",
+      gender: "Male",
+      picture: null,
+      ukAddress: "",
+      postcode: "",
+      email: "",
+      mobile: "",
+      landline: "",
+      village: "",
+      postOffice: "",
+      upazela: "",
+      membershipFee: 20,
+      receivedBy: "",
+      signatureOfApplicant: null,
+      declarationAccepted: false,
+    });
+    setPicturePreview(null);
+    setSignaturePreview(null);
+    setShowPayment(false);
+    setPendingFormData(null);
+  } catch (error) {
+    console.error("Error submitting membership:", error);
+    toast.error("Error submitting form: " + error.message);
+  }
+};
+ return (
+  <div className="min-h-screen bg-gray-50 py-12 px-4">
+    {showPayment ? (
+      <div className="max-w-xl mx-auto bg-white rounded-lg shadow-sm p-8">
+        <h2 className="text-2xl font-bold mb-6 text-green-700">Complete Payment</h2>
+        <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+          <p className="text-gray-700">
+            <strong>Name:</strong> {pendingFormData?.fullName}
+          </p>
+          <p className="text-gray-700">
+            <strong>Email:</strong> {pendingFormData?.email}
+          </p>
+          <p className="text-gray-700 text-lg font-semibold mt-2">
+            <strong>Amount:</strong> £{formData.membershipFee}
+          </p>
+        </div>
+        <StripeCheckout
+          amount={formData.membershipFee}
+          currency="gbp"
+          name={pendingFormData?.fullName}
+          email={pendingFormData?.email}
+          isRecurring={false}
+          onSuccess={handlePaymentSuccess}
+        />
+        <button
+          onClick={() => setShowPayment(false)}
+          className="mt-4 w-full text-gray-600 hover:text-gray-800 underline"
+        >
+          Back to form
+        </button>
+      </div>
+    ) : (
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-sm p-8">
         <h2 className="text-3xl font-bold mb-2 text-green-700">
           Membership Application
@@ -530,6 +578,7 @@ export default function MembershipForm() {
           </div>
         </form>
       </div>
+      )}
     </div>
   );
 }

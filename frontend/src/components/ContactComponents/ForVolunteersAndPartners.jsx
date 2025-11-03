@@ -2,7 +2,7 @@ import React from "react";
 import { ICONS } from "../../assets/Icons";
 
 const ForVolunteersAndPartners = () => (
-  <div className="w-full bg-white py-16 px-4">
+  <div className="w-full bg-white p-4 lg:py-12">
       <div className="bg-gray-50 rounded-lg p-8  border-l-4 border-(--main-green-color)EW">
         <div className="flex items-center mb-6">
           <div className="w-12 h-12 bg-(--main-green-color) rounded-full flex items-center justify-center mr-4">

@@ -19,17 +19,19 @@ const Contact = ({}) => {
         description="Let's Connect and Make a Difference Together"
       />
       <WeAreAlwaysHere />
-      {/* <ContactForm /> */}
 
-      <div className="flex lg:flex-row  flex-col items-center justify-center">
+      <div className="flex lg:flex-row mb-4  flex-col items-center justify-center">
         <ForFamiliesAndCommunity />
         <ForSupportersAndDonors />
       </div>
       <OurPromise />
-      <div className="flex lg:flex-row  flex-col items-center justify-center">
+      <div className="grid grid-cols-2 items-center justify-center">
         <ForVolunteersAndPartners />
         <ReachingOut />
+        <div className=" flex items-center justify-center ">
+
       <HowToStayConnected />
+        </div>
       </div>
       <div className="flex lg:flex-row  flex-col items-center justify-center">
         <OurHeartfeltMessage />

@@ -1,7 +1,7 @@
 import React from "react";
 
 const JoinUs = () => (
-  <div className="w-full bg-(--main-green-color) text-white py-16 px-6">
+  <div className="w-full bg-(--main-green-color) mb-8 text-white py-16 px-6">
     <div className="max-w-3xl mx-auto text-center">
       <h2 className="lg:text-4xl text-2xl font-bold mb-6 text-(--main-orange-color)">
         Join Us

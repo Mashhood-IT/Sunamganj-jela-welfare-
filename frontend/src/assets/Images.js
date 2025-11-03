@@ -16,8 +16,10 @@ export const IMAGES = {
   HS: "./HS.webp",
   SR: "./SR.webp",
   WBD: "./WBD.webp",
-  hero1: "./donation1.webp",
-  hero: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1920",
+  hero: "./hero.webp",
+  hero1: "./hero1.webp",
+  hero2: "./hero2.webp",
+  hero3: "./hero3.webp",
 
   about:
   "./aboutus.webp",  
