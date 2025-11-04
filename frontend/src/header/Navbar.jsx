@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white py-4`}
+      className={`fixed top-0 left-0 right-0 z-999 transition-all duration-300 bg-white py-4`}
     >
       <div className="2xl:max-w-[1780px] lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -69,9 +69,7 @@ const Navbar = () => {
                 key={link.label}
                 to={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`px-4 py-3 ${
-                  scrolled ? "text-black" : "text-white"
-                } font-medium  hover:text-(--main-green-color) rounded-lg transition-all duration-300`}
+                className={`px-4 py-3 text-black font-medium  hover:text-(--main-green-color) rounded-lg transition-all duration-300`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {link.label}
