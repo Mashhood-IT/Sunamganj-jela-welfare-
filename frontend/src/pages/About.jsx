@@ -25,9 +25,11 @@ const About = () => {
         }
       };
     } else {
+      // If SDK already loaded, parse again
       window.FB.XFBML.parse();
     }
   }, []);
+
   return (
     <div>
       <HeroSection
@@ -36,35 +38,49 @@ const About = () => {
       />
       <AboutSection />
       <OurJourney />
+      <Team />
+      <CEOMessage />
       <CoreValues />
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">
+      
+      {/* Facebook Page Section */}
+      <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 md:mb-6 text-gray-900">
             Stay Connected
           </h2>
-          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-center text-gray-600 mb-8 md:mb-12 max-w-2xl mx-auto text-base md:text-lg px-4">
             Follow our latest updates and activities on Facebook
           </p>
+          
           <div className="flex justify-center items-center">
-            <div className="w-full max-w-[500px]">
-              <iframe
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpeople%2FSunamganj-jela-welfare-Association-Uk%2F100064737004572%2F&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                width="500"
-                height="600"
-                style={{ border: "none", overflow: "hidden" }}
-                scrolling="no"
-                frameBorder="0"
-                allowFullScreen={true}
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                className="shadow-lg rounded-lg w-full"
-              ></iframe>
+            <div className="w-full max-w-[500px] px-4 sm:px-0">
+              {/* Facebook Page Plugin */}
+              <div 
+                className="fb-page shadow-lg rounded-lg overflow-hidden bg-white" 
+                data-href="https://www.facebook.com/people/Sunamganj-jela-welfare-Association-Uk/100064737004572/"
+                data-tabs="timeline"
+                data-width="500"
+                data-height="600"
+                data-small-header="false"
+                data-adapt-container-width="true"
+                data-hide-cover="false"
+                data-show-facepile="true"
+              >
+                <blockquote 
+                  cite="https://www.facebook.com/people/Sunamganj-jela-welfare-Association-Uk/100064737004572/" 
+                  className="fb-xfbml-parse-ignore"
+                >
+                  <a href="https://www.facebook.com/people/Sunamganj-jela-welfare-Association-Uk/100064737004572/">
+                    Sunamganj Jela Welfare Association UK
+                  </a>
+                </blockquote>
+              </div>
             </div>
           </div>
         </div>
       </section>
+      
       <HowYouCanHelp />
-      <CEOMessage />
-      <Team />
     </div>
   );
 };

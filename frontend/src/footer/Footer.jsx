@@ -7,20 +7,20 @@ import { useState } from "react";
 
 const Footer = () => {
   const [form, setForm] = useState({ email: "", subscribe: true });
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const res = await axios.post(
-      `${import.meta.env.VITE_API_URL}/contact/create-message`,
-      form
-    );
-    toast.success("Subscribed successfully!");
-    setForm({ email: "", subscribe: true }); // Clear form
-  } catch (error) {
-    console.log(error);
-    toast.error("Subscription failed. Please try again.");
-  }
-};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/contact/create-message`,
+        form
+      );
+      toast.success("Subscribed successfully!");
+      setForm({ email: "", subscribe: true }); // Clear form
+    } catch (error) {
+      console.log(error);
+      toast.error("Subscription failed. Please try again.");
+    }
+  };
   const socialLinks = [
     {
       icon: ICONS.Facebook,
@@ -37,7 +37,7 @@ const handleSubmit = async (e) => {
 
       <div className="relative z-10 2xl:max-w-[1780px] lg:max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Brand Info */}
-        <div>
+        <div className="ml-2">
           <div className="flex items-center gap-2 mb-4">
             <img src={IMAGES.Logo} height={100} width={100} alt="" />
             <span className="text-lg text-(--main-orange-color) font-semibold ">

@@ -83,7 +83,7 @@ const About = () => {
           >
             <div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 lg:ml-12 2xl:m-0 xl:ml-3  ml-0 gap-4">
                 <img
                   src={IMAGES.about}
                   alt="Our mission"
@@ -126,7 +126,7 @@ const About = () => {
                 <span className="relative lg:ml-0 ml-2 z-10 bg-linear-to-br from-[#065f46] to-[#10b981] bg-clip-text text-transparent">
                   Sunamganj Jela Welfare
                 </span>
-                <span className=" hidden lg:block absolute bottom-2 left-0 w-full h-3 bg-[#10b981]/20 z-0" />
+                <span className=" hidden md:hidden xl:block absolute bottom-2 left-0 w-full h-3 bg-[#10b981]/20 z-0" />
               </span>
             </h2>
 
@@ -178,20 +178,19 @@ const About = () => {
                 );
               })}
             </div>
-
-            <div className="mt-8 flex gap-4">
-              <Link to="/about">
-                <button className="group cursor-pointer relative px-6 py-3 bg-[#065f46] text-white rounded-full font-semibold overflow-hidden hover:shadow-xl hover:shadow-[#065f46]/30 transition-all duration-300 hover:scale-105">
-                  <span className="relative z-10">Learn Our Story</span>
-                  <div className="absolute inset-0 bg-[#064e3b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                </button>
-              </Link>
-              <Link to="/donations">
-                <button className="px-6 py-3 cursor-pointer border-2 border-[#065f46] text-(--main-green-color) rounded-full font-semibold hover:bg-[#065f46] hover:text-white transition-all duration-300 hover:scale-105">
-                  View Impact Report
-                </button>
-              </Link>
-            </div>
+   <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+      <Link to="/about" className="w-full sm:w-auto">
+        <button className="w-full sm:w-auto group cursor-pointer relative px-6 py-3 bg-[#065f46] text-white rounded-full font-semibold overflow-hidden hover:shadow-xl hover:shadow-[#065f46]/30 transition-all duration-300 hover:scale-105">
+          <span className="relative z-10">Learn Our Story</span>
+          <div className="absolute inset-0 bg-[#064e3b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+        </button>
+      </Link>
+      <Link to="/donations" className="w-full sm:w-auto">
+        <button className="w-full sm:w-auto px-6 py-3 cursor-pointer border-2 border-[#065f46] text-(--main-green-color) rounded-full font-semibold hover:bg-[#065f46] hover:text-white transition-all duration-300 hover:scale-105">
+          View Impact Report
+        </button>
+      </Link>
+    </div>
           </div>
         </div>
       </div>

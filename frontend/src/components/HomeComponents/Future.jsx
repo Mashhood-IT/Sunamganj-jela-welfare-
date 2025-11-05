@@ -10,7 +10,7 @@ const Future = () => {
         bg-center bg-cover bg-no-repeat
         md:bg-fixed bg-scroll
       "
-      style={{ backgroundImage: `url(${IMAGES.donatoinHands})` }}
+      style={{ backgroundImage: `url(${IMAGES.donation2})` }}
       aria-label="The Solution"
     >
       {/* overlays for contrast */}

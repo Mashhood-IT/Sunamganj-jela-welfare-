@@ -20,11 +20,11 @@ const Solution = () => {
       {/* content */}
       <div className="relative z-10 h-full flex items-center justify-center px-4">
         <div className="text-center max-w-2xl space-y-5">
-          <h1 className="text-white text-3xl md:text-4xl font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+          <h1 className="text-white  text-3xl md:text-5xl font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
             The Solution
           </h1>
 
-          <p className="text-white/90 text-sm md:text-base leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+          <p className="text-white/90 lg:text-xl text-md md:text-base leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
             We provide hope to people who need it the most through our work. A
             lot of families in Sunamganj continue to experience loss and
             poverty. We attempt to bring some light into their life. We also

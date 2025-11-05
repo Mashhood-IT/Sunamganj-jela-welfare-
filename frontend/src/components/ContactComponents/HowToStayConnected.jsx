@@ -2,7 +2,8 @@ import React from "react";
 import { ICONS } from "../../assets/Icons";
 
 const HowToStayConnected = () => (
-  <div className="w-full bg-white p-4">
+  <div className="lg:col-span-2 flex justify-center w-full">
+    <div className="max-w-full lg:max-w-3xl xl:max-w-4xl mx-auto bg-white p-4 w-full">
       <div className="bg-gray-50 rounded-lg p-8 border-l-4 border-(--main-green-color)">
         <div className="flex items-center mb-6">
           <div className="w-12 h-12 bg-(--main-green-color) rounded-full flex items-center justify-center mr-4">
@@ -19,7 +20,9 @@ const HowToStayConnected = () => (
         <p className="text-gray-700 leading-relaxed text-md">
           Being in touch involves than passing words. It is about becoming more like each other, getting to know each other, and sharing care regardless of distance.
         </p>
+      </div>
     </div>
   </div>
 );
+
 export default HowToStayConnected;

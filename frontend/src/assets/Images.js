@@ -9,7 +9,7 @@ export const IMAGES = {
   JS3: "./JS3.webp",
   Treasurer: "./Treasurer.webp",
   VCP: "./VCP.webp",
-  donatoinHands: "./donationHands.webp",
+  donation2: "./donation2.webp",
   Logo: "./logo.webp",
   FR: "./FR.webp",
   CWP: "./CWP.webp",

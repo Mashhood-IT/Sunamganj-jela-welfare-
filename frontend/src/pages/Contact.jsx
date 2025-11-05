@@ -25,14 +25,11 @@ const Contact = ({}) => {
         <ForSupportersAndDonors />
       </div>
       <OurPromise />
-      <div className="grid grid-cols-2 items-center justify-center">
-        <ForVolunteersAndPartners />
-        <ReachingOut />
-        <div className=" flex items-center justify-center ">
-
-      <HowToStayConnected />
-        </div>
-      </div>
+<div className="grid lg:grid-cols-2 items-center justify-center">
+  <ForVolunteersAndPartners />
+  <ReachingOut />
+  <HowToStayConnected />
+</div>
       <div className="flex lg:flex-row  flex-col items-center justify-center">
         <OurHeartfeltMessage />
         <JoinUs />
