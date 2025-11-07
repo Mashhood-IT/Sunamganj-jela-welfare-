@@ -4,49 +4,65 @@ const fs = require("fs");
 const path = require("path");
 
 const sendMembershipEmail = async (membership) => {
-  const pdfPath = path.join(__dirname, `../uploads/membership_${membership._id}.pdf`);
+  const pdfPath = path.join(
+    __dirname,
+    `../uploads/membership_${membership._id}.pdf`
+  );
 
   const isPDF = (filePath) => {
     return filePath && path.extname(filePath).toLowerCase() === ".pdf";
   };
 
-const renderFile = (filePath, title) => {
-  if (!filePath) return "";
-  const clean = String(filePath).replace(/^\//, "");
-  const absPath = path.join(process.cwd(), clean);
+  const renderFile = (filePath, title) => {
+    if (!filePath) return "";
+    const clean = String(filePath).replace(/^\//, "");
+    const absPath = path.join(process.cwd(), clean);
 
-  if (isPDF(filePath)) {
-    const name = path.basename(clean);
-    return `
+    if (isPDF(filePath)) {
+      const name = path.basename(clean);
+      return `
       <div class="section file-note">
         <h3>${title}</h3>
         <p>Attached PDF: ${name}</p>
       </div>
     `;
-  }
-  if (fs.existsSync(absPath)) {
-    try {
-      const imageBuffer = fs.readFileSync(absPath);
-      const base64Image = imageBuffer.toString('base64');
-      const ext = path.extname(absPath).toLowerCase();
-      const mimeType = ext === '.png' ? 'image/png' : ext === '.jpg' || ext === '.jpeg' ? 'image/jpeg' : 'image/png';
-      
-      return `
+    }
+    if (fs.existsSync(absPath)) {
+      try {
+        const imageBuffer = fs.readFileSync(absPath);
+        const base64Image = imageBuffer.toString("base64");
+        const ext = path.extname(absPath).toLowerCase();
+        const mimeType =
+          ext === ".png"
+            ? "image/png"
+            : ext === ".jpg" || ext === ".jpeg"
+            ? "image/jpeg"
+            : "image/png";
+
+        return `
         <div class="section image-block">
           <h3>${title}</h3>
           <img src="data:${mimeType};base64,${base64Image}" alt="${title}" />
         </div>
       `;
-    } catch (err) {
-      console.error(`Error reading image ${absPath}:`, err);
+      } catch (err) {
+        console.error(`Error reading image ${absPath}:`, err);
+      }
     }
-  }
 
-  return "";
-};
+    return "";
+  };
 
   const browser = await puppeteer.launch({
-    args: ["--allow-file-access-from-files", "--disable-web-security"],
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--allow-file-access-from-files",
+      "--disable-web-security",
+    ],
+    executablePath:
+      process.env.PUPPETEER_EXECUTABLE_PATH ||
+      (await import("puppeteer")).executablePath(),
   });
   const page = await browser.newPage();
 
@@ -83,10 +99,14 @@ const renderFile = (filePath, title) => {
           </div>
           <div style="text-align:right">
             <div><strong>Date of Application:</strong></div>
-            <div class="muted">${new Date(membership.dateOfApplication).toLocaleDateString()}</div>
+            <div class="muted">${new Date(
+              membership.dateOfApplication
+            ).toLocaleDateString()}</div>
             <div style="height:6px"></div>
             <div><strong>Date of Registration:</strong></div>
-            <div class="muted">${new Date(membership.dateOfApplication).toLocaleDateString()}</div>
+            <div class="muted">${new Date(
+              membership.dateOfApplication
+            ).toLocaleDateString()}</div>
           </div>
         </div>
 
@@ -95,23 +115,23 @@ const renderFile = (filePath, title) => {
           <table>
             <tr>
               <td class="label">Full name</td>
-              <td>${membership.title || ''} ${membership.fullName || '-'}</td>
+              <td>${membership.title || ""} ${membership.fullName || "-"}</td>
             </tr>
             <tr>
               <td class="label">Gender</td>
-              <td>${membership.gender || '-'}</td>
+              <td>${membership.gender || "-"}</td>
             </tr>
             <tr>
               <td class="label">Email</td>
-              <td>${membership.email || '-'}</td>
+              <td>${membership.email || "-"}</td>
             </tr>
             <tr>
               <td class="label">Mobile</td>
-              <td>${membership.mobile || '-'}</td>
+              <td>${membership.mobile || "-"}</td>
             </tr>
             <tr>
               <td class="label">Landline</td>
-              <td>${membership.landline || '-'}</td>
+              <td>${membership.landline || "-"}</td>
             </tr>
           </table>
         </div>
@@ -121,14 +141,22 @@ const renderFile = (filePath, title) => {
           <div class="grid">
             <div class="col">
               <h3>UK Address</h3>
-              <p>${membership.ukAddress || '-'}</p>
-              <p class="muted"><strong>Postcode:</strong> ${membership.postcode || '-'}</p>
+              <p>${membership.ukAddress || "-"}</p>
+              <p class="muted"><strong>Postcode:</strong> ${
+                membership.postcode || "-"
+              }</p>
             </div>
             <div class="col">
               <h3>Bangladesh Address</h3>
-              <p><strong>Village:</strong> ${membership.bangladeshAddress?.village || '-'}</p>
-              <p><strong>Post Office:</strong> ${membership.bangladeshAddress?.postOffice || '-'}</p>
-              <p><strong>Upazela:</strong> ${membership.bangladeshAddress?.upazela || '-'}</p>
+              <p><strong>Village:</strong> ${
+                membership.bangladeshAddress?.village || "-"
+              }</p>
+              <p><strong>Post Office:</strong> ${
+                membership.bangladeshAddress?.postOffice || "-"
+              }</p>
+              <p><strong>Upazela:</strong> ${
+                membership.bangladeshAddress?.upazela || "-"
+              }</p>
             </div>
           </div>
         </div>
@@ -142,19 +170,22 @@ const renderFile = (filePath, title) => {
             </tr>
             <tr>
               <td class="label">Received By</td>
-              <td>${membership.receivedBy || '-'}</td>
+              <td>${membership.receivedBy || "-"}</td>
             </tr>
             <tr>
               <td class="label">Declaration Accepted</td>
-              <td>${membership.declarationAccepted ? 'Yes' : 'No'}</td>
+              <td>${membership.declarationAccepted ? "Yes" : "No"}</td>
             </tr>
           </table>
         </div>
 
         <div class="card">
           <div style="display:flex; gap:20px;">
-            ${renderFile(membership.picture, 'Profile Picture')}
-            ${renderFile(membership.signatureOfApplicant, 'Signature of Applicant')}
+            ${renderFile(membership.picture, "Profile Picture")}
+            ${renderFile(
+              membership.signatureOfApplicant,
+              "Signature of Applicant"
+            )}
           </div>
         </div>
 
@@ -163,11 +194,17 @@ const renderFile = (filePath, title) => {
           <table>
             <tr>
               <td class="label">Approved By</td>
-              <td>${membership.approvedBy?.fullName || '-'}</td>
+              <td>${membership.approvedBy?.fullName || "-"}</td>
             </tr>
             <tr>
               <td class="label">Approver Signature</td>
-              <td>${renderFile(membership.approvedBy?.signature || membership['approvedBy.signature'], 'Approver Signature') || '-'}</td>
+              <td>${
+                renderFile(
+                  membership.approvedBy?.signature ||
+                    membership["approvedBy.signature"],
+                  "Approver Signature"
+                ) || "-"
+              }</td>
             </tr>
           </table>
         </div>
@@ -188,7 +225,10 @@ const renderFile = (filePath, title) => {
   ];
 
   if (isPDF(membership.picture)) {
-    const picPath = path.join(process.cwd(), membership.picture.replace(/^\//, ""));
+    const picPath = path.join(
+      process.cwd(),
+      membership.picture.replace(/^\//, "")
+    );
     if (fs.existsSync(picPath)) {
       attachments.push({
         filename: `picture_${membership.fullName}.pdf`,
@@ -197,7 +237,10 @@ const renderFile = (filePath, title) => {
     }
   }
   if (isPDF(membership.signatureOfApplicant)) {
-    const signaturePath = path.join(process.cwd(), membership.signatureOfApplicant);
+    const signaturePath = path.join(
+      process.cwd(),
+      membership.signatureOfApplicant
+    );
     if (fs.existsSync(signaturePath)) {
       attachments.push({
         filename: `applicant_signature_${membership.fullName}.pdf`,
@@ -206,9 +249,16 @@ const renderFile = (filePath, title) => {
     }
   }
 
-  const approverSigPathRaw = membership.approvedBy?.signature || membership['approvedBy.signature'] || membership.approverSignature || "";
+  const approverSigPathRaw =
+    membership.approvedBy?.signature ||
+    membership["approvedBy.signature"] ||
+    membership.approverSignature ||
+    "";
   if (isPDF(approverSigPathRaw)) {
-    const approverPath = path.join(process.cwd(), approverSigPathRaw.replace(/^\//, ""));
+    const approverPath = path.join(
+      process.cwd(),
+      approverSigPathRaw.replace(/^\//, "")
+    );
     if (fs.existsSync(approverPath)) {
       attachments.push({
         filename: `approver_signature_${membership.fullName}.pdf`,
@@ -216,8 +266,6 @@ const renderFile = (filePath, title) => {
       });
     }
   }
-
- 
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -236,7 +284,11 @@ const renderFile = (filePath, title) => {
       <p><strong>Name:</strong> ${membership.fullName}</p>
       <p><strong>Email:</strong> ${membership.email}</p>
       <p><strong>View attached PDF for full details.</strong></p>
-      ${attachments.length > 1 ? '<p><em>Note: PDF  are included as separate attachments.</em></p>' : ''}
+      ${
+        attachments.length > 1
+          ? "<p><em>Note: PDF  are included as separate attachments.</em></p>"
+          : ""
+      }
     `,
     attachments,
   };
