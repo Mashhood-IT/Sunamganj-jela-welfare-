@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import { Elements, PaymentElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import {
+  Elements,
+  PaymentElement,
+  useStripe,
+  useElements,
+} from "@stripe/react-stripe-js";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -16,24 +21,22 @@ function CheckoutForm({ onSuccess, amount }) {
     if (!stripe || !elements) return;
 
     setLoading(true);
-const { error, paymentIntent } = await stripe.confirmPayment({
-  elements,
-  redirect: "if_required",
-});
+   
 
-if (error) {
-  toast.error(error.message);
-  setLoading(false);
-} else if (paymentIntent && paymentIntent.status === "succeeded") {
-  setLoading(false);
-  onSuccess();
-}
+    const { error, paymentIntent } = await stripe.confirmPayment({
+      elements,
+      redirect: "if_required",
+    });
 
     if (error) {
       toast.error(error.message);
       setLoading(false);
-    } else {
-      onSuccess();
+      return; // ✅ Prevent further execution
+    }
+
+    if (paymentIntent?.status === "succeeded") {
+      setLoading(false);
+      onSuccess(); // ✅ Will run only once
     }
   };
 
@@ -51,21 +54,31 @@ if (error) {
   );
 }
 
-export default function StripeCheckout({ amount,currency, name, email, isRecurring, onSuccess }) {
+export default function StripeCheckout({
+  amount,
+  currency,
+  name,
+  email,
+  isRecurring,
+  onSuccess,
+}) {
   const [clientSecret, setClientSecret] = useState("");
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
+  useEffect(() => {
     async function fetchIntent() {
       setLoading(true);
       try {
-        const res = await axios.post(`${import.meta.env.VITE_API_URL}/stripe/create-payment-intent`, {
-          amount,
-          currency,
-          name,
-          email,
-          isRecurring,
-        });
+        const res = await axios.post(
+          `${import.meta.env.VITE_API_URL}/stripe/create-payment-intent`,
+          {
+            amount,
+            currency,
+            name,
+            email,
+            isRecurring,
+          }
+        );
         setClientSecret(res.data.clientSecret);
       } catch (err) {
         toast.error("Failed to initialize payment");
@@ -76,10 +89,14 @@ useEffect(() => {
     fetchIntent();
   }, [amount, currency, name, email, isRecurring]);
 
-
-
-  if (loading) return <div className="text-center py-8">Loading payment...</div>;
-  if (!clientSecret) return <div className="text-center py-8 text-red-500">Unable to initialize payment.</div>;
+  if (loading)
+    return <div className="text-center py-8">Loading payment...</div>;
+  if (!clientSecret)
+    return (
+      <div className="text-center py-8 text-red-500">
+        Unable to initialize payment.
+      </div>
+    );
 
   return (
     <Elements stripe={stripePromise} options={{ clientSecret }}>
@@ -87,4 +104,3 @@ useEffect(() => {
     </Elements>
   );
 }
-

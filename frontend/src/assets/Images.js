@@ -51,4 +51,12 @@ export const IMAGES = {
     "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400",
 
   Kid: "./kid.webp",
+  meeting: "./meeting.webp",
+  meeting2: "./meeting2.webp",
+  meeting3: "./meeting3.webp",
+  meeting4: "./meeting4.webp",
+  meeting5: "./meeting5.webp",
+  meeting6: "./meeting6.webp",
+  meeting7: "./meeting7.webp",
+
 };
