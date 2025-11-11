@@ -10,7 +10,7 @@ export default function OurJourney() {
           </div>
         </div>
 
-        <h2 className="text-4xl font-bold mb-8 text-gray-900">Our Journey</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Our Journey</h2>
 
         <p className="text-gray-700 leading-relaxed text-lg mb-6">
           Decades ago, some individuals in our society realized that little

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AppLayout from "./AppLayout";
 import About from "./pages/About";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Home";
 import Contact from "./pages/Contact";
 import Donations from "./Donations";
@@ -9,6 +9,11 @@ import DonationForm from "./components/DonationForm";
 import { Toaster } from "react-hot-toast";
 import MemberShipPage from "./pages/MemberShipPage";
 const App = () => {
+   const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
   return (
     <div>
       <Toaster  />

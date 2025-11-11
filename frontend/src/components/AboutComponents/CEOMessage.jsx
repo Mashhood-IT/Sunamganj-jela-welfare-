@@ -9,10 +9,10 @@ const CEOMessage = () => {
             <img 
               src={IMAGES.Chairperson} 
               alt="CEO" 
-              className="w-48 h-48 rounded-full object-cover shadow-md"
+              className="rounded-full object-contain shadow-md"
             />
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Message from Our Chairperson</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Message from Our Chairperson</h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 "I am determined to look ahead, seek opportunities, prospects and progress. We should not be looking back, except to learn from our shortcomings and press ahead to build a brighter future. We must uphold constitutional rule, bring amendments where necessary, respect the traditions and long-lasting practices of the organisation. The past practices often set the direction for the future."
               </p>

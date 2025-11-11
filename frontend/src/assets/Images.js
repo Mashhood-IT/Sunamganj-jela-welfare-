@@ -1,7 +1,9 @@
 export const IMAGES = {
   Logo1: "./jela.webp",
+  OurStory: "./about-image.webp",
+  // Team Members
   Chairperson: "./Chairperson.webp",
-  // Team 
+  Chairman: "./Chairman.webp",
   GS: "./GS.webp",
   JS: "./JS.webp",
   JS1: "./JS1.webp",
@@ -29,28 +31,15 @@ export const IMAGES = {
   "./about3.webp",  
   about4:
   "./about4.webp",  
-  ourstory:
-  "./ourstory.webp",  
-  ourstory2:
-  "./ourstory2.webp",  
-  ourstory3:
-  "./ourstory3.webp",  
   cause1:
     "https://images.pexels.com/photos/8277092/pexels-photo-8277092.jpeg?auto=compress&cs=tinysrgb&w=800",
   cause2:
     "https://images.pexels.com/photos/6646914/pexels-photo-6646914.jpeg?auto=compress&cs=tinysrgb&w=800",
   cause3:
     "https://images.pexels.com/photos/6646915/pexels-photo-6646915.jpeg?auto=compress&cs=tinysrgb&w=800",
-  team1:
-    "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
-  team2:
-    "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
-  team3:
-    "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
-  team4:
-    "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400",
-
+ 
   Kid: "./kid.webp",
+  // EC Meeting Gallery 
   meeting: "./meeting.webp",
   meeting2: "./meeting2.webp",
   meeting3: "./meeting3.webp",
@@ -58,5 +47,14 @@ export const IMAGES = {
   meeting5: "./meeting5.webp",
   meeting6: "./meeting6.webp",
   meeting7: "./meeting7.webp",
-
+//  BM Gallery
+BM1: "./BMG1.webp", 
+BM2: "./BMG2.webp", 
+BM3: "./BMG3.webp", 
+BM4: "./BMG4.webp", 
+BM5: "./BMG5.webp", 
+BM6: "./BMG6.webp", 
+BM7: "./BMG7.webp", 
+BM8: "./BMG8.webp", 
+BM9: "./BMG9.webp", 
 };

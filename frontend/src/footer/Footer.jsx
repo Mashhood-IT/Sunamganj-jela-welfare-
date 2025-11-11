@@ -100,7 +100,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ICONS.MapPin size={25} className="text-(--main-green-color)" />
+              <ICONS.MapPin size={18} className=" text-(--main-green-color)" />
               304 Commercial Road, London, England, E1 2PY
             </a>
           </div>

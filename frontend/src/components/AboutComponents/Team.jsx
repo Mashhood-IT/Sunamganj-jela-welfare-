@@ -5,7 +5,7 @@ const Team = () => {
   return (
     <section className="py-10 lg:px-24 px-8">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-slate-900">Meet our team</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-slate-900">Meet our team</h2>
         <p className="text-slate-600 text-sm mt-3 max-w-2xl mx-auto leading-relaxed">
           We&apos;re a group of passionate professionals committed to building
           high-quality digital solutions. Our diverse skills and collaborative

@@ -35,6 +35,7 @@ import {
   Globe,
   Handshake,
   MessageCircle,
+  Calendar,
 } from "lucide-react";
 
 export const ICONS = {
@@ -48,6 +49,7 @@ export const ICONS = {
   Handshake,
   Briefcase,
   X,
+  Calendar,
   Target,
   MessageCircle,
   Eye,

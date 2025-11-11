@@ -95,12 +95,17 @@ export const stats = [
 
 export const teamMembers = [
   {
+    name: "Engineer Habibur Rahman",
+    role: "Chairman",
+    img: IMAGES.Chairman,
+  },
+  {
     name: "Aman Ali",
     role: "ChairPerson",
     img: IMAGES.Chairperson,
   },
   {
-    name: "Neazul Islam Chowdhury",
+    name: "Ex Councillor Ruhul Amin",
     role: "General Secretary",
     img: IMAGES.GS,
   },
@@ -120,7 +125,7 @@ export const teamMembers = [
     img: IMAGES.JS3,
   },
   {
-    name: "Shafiq Ahmad",
+    name: "Md Abu Yasin Shuman",
     role: "Treasurer",
     img: IMAGES.Treasurer,
   },

@@ -3,10 +3,10 @@ import { Users, HeartHandshake, HandCoins } from "lucide-react";
 
 export default function HowYouCanHelp() {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-16">
+    <section className="bg-linear-to-b from-gray-50 to-white py-16">
       <div className="max-w-4xl mx-auto px-6">
         <div className="rounded-2xl shadow-xl bg-white/90 backdrop-blur-md p-10 md:p-14 text-center animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 tracking-tight">
             How You Can Help
           </h2>
           <p className="text-gray-700 mb-8 text-lg">

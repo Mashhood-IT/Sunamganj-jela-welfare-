@@ -7,6 +7,7 @@ import HowYouCanHelp from "../components/AboutComponents/HowYouCanHelp";
 import OurJourney from "../components/AboutComponents/OurJourney";
 import CoreValues from "../components/AboutComponents/CoreValues";
 import MeetingGallerySection from "../components/AboutComponents/MeetingsGallerySection";
+import BiennialMeetingGallery from "../components/AboutComponents/BiennialMeetingGallery";
 
 const About = () => {
   React.useEffect(() => {
@@ -38,6 +39,7 @@ const About = () => {
         description="Kindness at the Heart of Every Action"
       />
       <AboutSection />
+      <BiennialMeetingGallery />
       <OurJourney />
       <MeetingGallerySection />
       <Team />
