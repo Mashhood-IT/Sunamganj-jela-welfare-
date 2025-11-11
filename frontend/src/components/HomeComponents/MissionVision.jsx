@@ -1,14 +1,14 @@
 import { ICONS } from "../../assets/Icons";
 
-export default function MissionVision() {
+const MissionVision =() => {
   return (
     <div className="w-full bg-gray-50 py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-3">
+          <h2 className="lg:text-3xl text-2xl font-bold text-gray-800 mb-3">
             Our Mission & Vision
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 lg:text-lg text-md">
             Committed to serving humanity with compassion and integrity
           </p>
         </div>
@@ -19,7 +19,7 @@ export default function MissionVision() {
               <div className="w-12 h-12 bg-(--main-green-color) rounded-full flex items-center justify-center mr-4">
                 <ICONS.Target className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800">Our Mission</h3>
+              <h3 className="lg:text-3xl text-2xl font-bold text-gray-800">Our Mission</h3>
             </div>
             <p className="text-gray-700 leading-relaxed mb-4">
               Our mission is simple. Our mission is to improve the lives of the
@@ -64,3 +64,5 @@ export default function MissionVision() {
     </div>
   );
 }
+
+export default MissionVision

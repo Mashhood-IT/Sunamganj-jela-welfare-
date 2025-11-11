@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Heart, ArrowRight } from "lucide-react";
 import HeroSection from "../../constants/HeroSection";
 import { campaignContent } from "../../constants/Data";
 import StripeCheckout from "../StripeCheckout";
 import toast from "react-hot-toast";
+import { ICONS } from "../../assets/Icons";
 
 const CampaignDetails = ({ campaign, onBack }) => {
   const [donationAmount, setDonationAmount] = useState("");
@@ -32,7 +32,7 @@ const CampaignDetails = ({ campaign, onBack }) => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
       <div>
         <HeroSection title={campaign.title} description={campaign.description} />
       </div>
@@ -40,7 +40,7 @@ const CampaignDetails = ({ campaign, onBack }) => {
           onClick={onBack} 
           className=" ml-12 mt-12 bg-white/90 backdrop-blur-sm text-gray-900 px-6 py-3 rounded-lg cursor-pointer flex items-center gap-2 hover:bg-white transition-all shadow-lg font-semibold"
         >
-          <ArrowRight className="w-5 h-5 rotate-180" />
+          <ICONS.ArrowRight className="w-5 h-5 rotate-180" />
           Back
         </button>
 
@@ -193,7 +193,7 @@ const CampaignDetails = ({ campaign, onBack }) => {
           className="flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-xl"
           style={{ backgroundColor: "var(--main-green-color)" }}
         >
-          <Heart className="w-6 h-6" />
+          <ICONS.Heart className="w-6 h-6" />
           Donate ${donationAmount || "0"}
         </button>
       </div>

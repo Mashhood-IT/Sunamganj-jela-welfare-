@@ -1,15 +1,13 @@
 import React from "react";
 
-const HeroSection = ({title, description}) => {
+const HeroSection = ({ title, description }) => {
   return (
-    <section className="bg-(--main-green-color) py-32 px-4">
+    <section className="bg-linear-to-br from-[#00A162] via-[#008a54] to-[#1a8d5f] py-32 px-4">
       <div className="max-w-7xl mx-auto text-center mt-4 space-y-4">
-        <h1 className="text-5xl font-bold text-white pt-16 ">{title}</h1>
-        <p className="text-xl text-gray-100 max-w-2xl mx-auto">
-          {description}
-        </p>
+        <h1 className="text-5xl font-bold text-white pt-[55px] ">{title}</h1>
+        <p className="text-xl text-gray-100 max-w-2xl mx-auto">{description}</p>
       </div>
     </section>
   );
 };
-export default HeroSection
+export default HeroSection;

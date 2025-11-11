@@ -37,7 +37,7 @@ const Footer = () => {
 
       <div className="relative z-10 2xl:max-w-[1780px] lg:max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Brand Info */}
-        <div className="ml-2">
+        <div className="lg:ml-2 ml-0">
           <div className="flex items-center gap-2 mb-4">
             <img src={IMAGES.Logo} height={100} width={100} alt="" />
             <span className="text-lg text-(--main-orange-color) font-semibold ">
@@ -100,7 +100,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ICONS.MapPin size={18} className=" text-(--main-green-color)" />
+              <ICONS.MapPin size={22} className=" text-(--main-green-color)" />
               304 Commercial Road, London, England, E1 2PY
             </a>
           </div>

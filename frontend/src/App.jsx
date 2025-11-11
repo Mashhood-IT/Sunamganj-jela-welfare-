@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AppLayout from "./AppLayout";
 import About from "./pages/About";
 import { Route, Routes, useLocation } from "react-router-dom";
-import Home from "./Home";
+import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Donations from "./Donations";
 import DonationForm from "./components/DonationForm";

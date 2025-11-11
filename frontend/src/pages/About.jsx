@@ -8,6 +8,7 @@ import OurJourney from "../components/AboutComponents/OurJourney";
 import CoreValues from "../components/AboutComponents/CoreValues";
 import MeetingGallerySection from "../components/AboutComponents/MeetingsGallerySection";
 import BiennialMeetingGallery from "../components/AboutComponents/BiennialMeetingGallery";
+import AboutHero from "../components/AboutComponents/AboutHero";
 
 const About = () => {
   React.useEffect(() => {
@@ -34,7 +35,7 @@ const About = () => {
 
   return (
     <div>
-      <HeroSection
+      <AboutHero
         title="About Us"
         description="Kindness at the Heart of Every Action"
       />

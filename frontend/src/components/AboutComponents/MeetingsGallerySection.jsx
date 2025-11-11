@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IMAGES } from "../../assets/Images";
 import { ICONS } from "../../assets/Icons";
+import SectionHeader from "../../constants/SectionHeader";
 
 const MeetingGallerySection = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
@@ -27,52 +28,27 @@ const MeetingGallerySection = () => {
 
   const handlePrevious = (e) => {
     e.stopPropagation();
-    setSelectedImageIndex((prev) => (prev === 0 ? meetingImages.length - 1 : prev - 1));
+    setSelectedImageIndex((prev) =>
+      prev === 0 ? meetingImages.length - 1 : prev - 1
+    );
   };
 
   const handleNext = (e) => {
     e.stopPropagation();
-    setSelectedImageIndex((prev) => (prev === meetingImages.length - 1 ? 0 : prev + 1));
+    setSelectedImageIndex((prev) =>
+      prev === meetingImages.length - 1 ? 0 : prev + 1
+    );
   };
 
   return (
     <section className="py-12 bg-linear-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-semibold tracking-wide uppercase border border-green-300">
-              Executive Committee
-            </span>
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {meetingDetails.title}
-          </h2>
-
-          <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
-
-          <p className="text-2xl font-semibold text-green-700 mb-6">
-            {meetingDetails.term}
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4 mt-4">
-            <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
-              <ICONS.Calendar className="w-5 h-5 text-green-600" />
-              <span className="text-gray-700 font-medium">
-                {meetingDetails.date}
-              </span>
-            </div>
-
-            <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
-              <ICONS.MapPin className="w-5 h-5 text-orange-500" />
-              <span className="text-gray-700 font-medium">
-                {meetingDetails.location}
-              </span>
-            </div>
-          </div>
-        </div>
-
+        <SectionHeader
+          tag="Executive Committee"
+          heading="First EC Meeting of the New Committee"
+          date="Monday, 13 October 2025"
+        />
         {/* Gallery */}
         <div className="space-y-6">
           {/* Featured image */}
@@ -96,7 +72,7 @@ const MeetingGallerySection = () => {
                 key={image.id}
                 className="mb-4 break-inside-avoid group relative overflow-hidden rounded-xl shadow-md cursor-pointer"
                 onClick={() => setSelectedImageIndex(index + 1)}
-              > 
+              >
                 <img
                   src={image.url}
                   alt={image.alt}
@@ -132,7 +108,7 @@ const MeetingGallerySection = () => {
               className="rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />
-            
+
             {/* Navigation Controls */}
             <div className="flex items-center justify-center gap-6 mt-6">
               <button
@@ -142,11 +118,11 @@ const MeetingGallerySection = () => {
               >
                 <ICONS.ChevronLeft className="w-8 h-8" />
               </button>
-              
+
               <span className="text-white font-semibold text-lg">
                 {selectedImageIndex + 1} / {meetingImages.length}
               </span>
-              
+
               <button
                 onClick={handleNext}
                 className="text-white cursor-pointer hover:text-[#FEAA53] transition-colors p-2 hover:bg-white/10 rounded-full"

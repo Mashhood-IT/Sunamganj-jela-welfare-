@@ -1,16 +1,10 @@
-import { ICONS } from "../../assets/Icons";
+import SectionHeader from "../../constants/SectionHeader";
 
-export default function OurJourney() {
+const OurJourney =() => {
   return (
-    <div className="w-full bg-white py-16 px-4">
+    <div className="w-full bg-white py-12 px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="flex items-center justify-center mb-6">
-          <div className="w-16 h-16 bg-(--main-orange-color) rounded-full flex items-center justify-center">
-            <ICONS.MapPin className="w-8 h-8 text-white" />
-          </div>
-        </div>
-
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Our Journey</h2>
+        <SectionHeader tag={"Our Journey"} heading={"The Path We Took"} />
 
         <p className="text-gray-700 leading-relaxed text-lg mb-6">
           Decades ago, some individuals in our society realized that little
@@ -19,8 +13,8 @@ export default function OurJourney() {
         </p>
 
         <p className="text-gray-700 leading-relaxed text-lg mb-6">
-          That slow beginning developed into{" "} 
-           <span className="font-bold text-(--main-green-color)">
+          That slow beginning developed into{" "}
+          <span className="font-bold text-(--main-green-color)">
             Sunamganj Jela Welfare Association UK
           </span>
           . What started as a group of volunteers has developed to be a reliable
@@ -36,3 +30,5 @@ export default function OurJourney() {
     </div>
   );
 }
+
+export default OurJourney

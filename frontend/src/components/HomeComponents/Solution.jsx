@@ -6,7 +6,7 @@ const Solution = () => {
   return (
     <section
       className="
-        relative w-full h-[60vh] md:h-[80vh] overflow-hidden
+        relative w-full h-screen md:h-[80vh] overflow-hidden
         bg-center bg-cover bg-no-repeat
         md:bg-fixed bg-scroll
       "
@@ -20,11 +20,11 @@ const Solution = () => {
       {/* content */}
       <div className="relative z-10 h-full flex items-center justify-center px-4">
         <div className="text-center max-w-2xl space-y-5">
-          <h1 className="text-white  text-3xl md:text-5xl font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+          <h1 className="text-white  text-2xl md:text-3xl font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
             The Solution
           </h1>
 
-          <p className="text-white/90 lg:text-xl text-md md:text-base leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+          <p className="text-white/90 lg:text-lg text-md md:text-base leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
             We provide hope to people who need it the most through our work. A
             lot of families in Sunamganj continue to experience loss and
             poverty. We attempt to bring some light into their life. We also
@@ -34,14 +34,7 @@ const Solution = () => {
             the only ones. Our purpose is simple. To help. To heal. To care
           </p>
           <Link to="/donations">
-            <button
-              className="
-            inline-flex cursor-pointer items-center justify-center
-            rounded-3xl border px-5 py-2 text-sm md:text-base
-            text-white border-(--main-green-color)/70 backdrop-blur
-            hover:bg-(--main-green-color)/20 hover:border-(--main-green-color) transition
-            "
-            >
+            <button className=" inline-flex cursor-pointer items-center justify-center rounded-3xl border px-5 py-2 text-sm md:text-base  text-white border-(--main-green-color)/70 backdrop-blur hover:bg-(--main-green-color)/20 hover:border-(--main-green-color) transition ">
               Solution
             </button>
           </Link>

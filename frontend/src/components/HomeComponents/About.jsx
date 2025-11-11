@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Users, Target, TrendingUp } from "lucide-react";
 import { IMAGES } from "../../assets/Images";
 import { stats } from "../../constants/Data";
 import { Link } from "react-router-dom";
@@ -67,12 +66,8 @@ const About = () => {
   };
 
   return (
-    <section
-      id="about"
-      className="py-20 bg-white overflow-hidden"
-      ref={sectionRef}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className=" bg-white overflow-hidden" ref={sectionRef}>
+      <div className=" px-4 sm:px-6 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div
             className={`relative transition-all duration-1000 ${
@@ -82,28 +77,11 @@ const About = () => {
             }`}
           >
             <div>
-
               <div className="grid grid-cols-2 lg:ml-12 2xl:m-0 xl:ml-3  ml-0 gap-4">
-                <img
-                  src={IMAGES.about}
-                  alt="Our mission"
-                  loading="lazy"
-                />
-                <img
-                  src={IMAGES.about2}
-                  alt="Our mission"
-                  loading="lazy"
-                />
-                <img
-                  src={IMAGES.about3}
-                  alt="Our mission"
-                  loading="lazy"
-                />
-                <img
-                  src={IMAGES.about4}
-                  alt="Our mission"
-                  loading="lazy"
-                />
+                <img src={IMAGES.about} alt="Our mission" loading="lazy" />
+                <img src={IMAGES.about2} alt="Our mission" loading="lazy" />
+                <img src={IMAGES.about3} alt="Our mission" loading="lazy" />
+                <img src={IMAGES.about4} alt="Our mission" loading="lazy" />
               </div>
             </div>
           </div>
@@ -115,22 +93,22 @@ const About = () => {
                 : "opacity-0 translate-x-12"
             }`}
           >
-            <div className="inline-block mb-4">
-              <span className="text-(--main-green-color) font-semibold text-sm uppercase tracking-wider bg-[#065f46]/10 px-4 py-2 rounded-full">
+            <div className="inline-block lg:mb-4 mb-2">
+              <span className="text-(--main-green-color) font-semibold lg:text-sm text-xs uppercase tracking-wider bg-[#065f46]/10 px-4 py-1 rounded-full">
                 About Us
               </span>
             </div>
 
-            <h2 className="text-4xl lg:text-5xl  font-bold text-gray-900 mb-6 leading-tight">
+            <h2 className="text-2xl lg:text-3xl  font-bold text-gray-900 lg:mb-6 mb-3 leading-tight">
               <span className="relative inline-block">
-                <span className="relative lg:ml-0 ml-2 z-10 bg-linear-to-br from-[#065f46] to-[#10b981] bg-clip-text text-transparent">
+                <span className="relative  z-10 bg-linear-to-br from-[#065f46] to-[#10b981] bg-clip-text text-transparent">
                   Sunamganj Jela Welfare
                 </span>
                 <span className=" hidden md:hidden xl:block absolute bottom-2 left-0 w-full h-3 bg-[#10b981]/20 z-0" />
               </span>
             </h2>
 
-            <p className="text-gray-600 text-lg leading-relaxed mb-4">
+            <p className="text-gray-600 lg:text-lg text-md leading-relaxed mb-4">
               We have a motto at Sunamganj Jela Welfare Association UK, and that
               is that kindness changes lives. We started with the dream to
               assist other people. Our place of origin is the Sunamganj District
@@ -139,7 +117,7 @@ const About = () => {
               home.
             </p>
 
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+            <p className="text-gray-600 text-md leading-relaxed mb-8">
               It is this association that we established to unite people. We aim
               to achieve the creation of dignified and hopeful living for
               families. Our clients are the Bangladeshi population in the UK and
@@ -178,19 +156,19 @@ const About = () => {
                 );
               })}
             </div>
-   <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-      <Link to="/about" className="w-full sm:w-auto">
-        <button className="w-full sm:w-auto group cursor-pointer relative px-6 py-3 bg-[#065f46] text-white rounded-full font-semibold overflow-hidden hover:shadow-xl hover:shadow-[#065f46]/30 transition-all duration-300 hover:scale-105">
-          <span className="relative z-10">Learn Our Story</span>
-          <div className="absolute inset-0 bg-[#064e3b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-        </button>
-      </Link>
-      <Link to="/donations" className="w-full sm:w-auto">
-        <button className="w-full sm:w-auto px-6 py-3 cursor-pointer border-2 border-[#065f46] text-(--main-green-color) rounded-full font-semibold hover:bg-[#065f46] hover:text-white transition-all duration-300 hover:scale-105">
-          View Impact Report
-        </button>
-      </Link>
-    </div>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+              <Link to="/about" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto group cursor-pointer relative px-6 py-3 bg-[#065f46] text-white rounded-full font-semibold overflow-hidden hover:shadow-xl hover:shadow-[#065f46]/30 transition-all duration-300 hover:scale-105">
+                  <span className="relative z-10">Learn Our Story</span>
+                  <div className="absolute inset-0 bg-[#064e3b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                </button>
+              </Link>
+              <Link to="/donations" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto px-6 py-3 cursor-pointer border-2 border-[#065f46] text-(--main-green-color) rounded-full font-semibold hover:bg-[#065f46] hover:text-white transition-all duration-300 hover:scale-105">
+                  View Impact Report
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

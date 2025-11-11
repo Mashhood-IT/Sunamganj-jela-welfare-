@@ -1,43 +1,17 @@
-import { BookOpen, HeartPulse, Home, Globe } from "lucide-react";
+import { ICONS } from "../../assets/Icons";
+import { services } from "../../constants/Data";
 
-const services = [
-  {
-    icon: BookOpen,
-    title: "Education and Youth",
-    description:
-      "Education opens doors. We help children in Sunamganj go to school. We provide books, fees, and support. In the UK, we guide young people to stay proud of their heritage and build strong futures.",
-    color: "var(--main-green-color)",
-  },
-  {
-    icon: HeartPulse,
-    title: "Health and Relief",
-    description:
-      "We help families during floods, illness, and hardship. During the COVID-19 pandemic, our volunteers gave food and medicine to those in need. We still offer relief when emergencies strike.",
-    color: "var(--main-orange-color)",
-  },
-  {
-    icon: Home,
-    title: "Community Growth",
-    description:
-      "We help rebuild homes, support small projects, and improve safety. We believe that strong communities grow from shared effort.",
-    color: "var(--main-green-color)",
-  },
-  {
-    icon: Globe,
-    title: "Culture and Unity",
-    description:
-      "In the UK, we give parties to celebrate our identity. These shows preserve our culture and make the new generations remain in touch with the Bangladeshi background.",
-    color: "var(--main-orange-color)",
-  },
-];
 
-export default function Services() {
+
+const Services = () => {
   return (
     <div className="w-full bg-gray-50 py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-3">What We Do</h2>
-          <p className="text-gray-600 text-lg">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-3">
+            What We Do
+          </h2>
+          <p className="text-gray-600 lg:text-lg text-md">
             Serving communities through care, compassion, and commitment
           </p>
         </div>
@@ -47,23 +21,23 @@ export default function Services() {
             <div key={index} className="bg-white p-8 rounded-lg shadow-md">
               <div className="flex items-start mb-4">
                 <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                  className="w-14 h-14 rounded-full flex items-center justify-center mr-4 shrink-0"
                   style={{ backgroundColor: service.color }}
                 >
                   <service.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 pt-2">
+                <h3 className="lg:text-2xl text-xl font-bold text-gray-800 pt-2">
                   {service.title}
                 </h3>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 lg:text-lg text-md leading-relaxed">
                 {service.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="lg:text-center lg:text-lg text-md mt-12">
           <h1>Leadership with Heart</h1>
           <p>
             Our leaders serve with care. The chairperson, Arman Ali, and the
@@ -77,9 +51,14 @@ export default function Services() {
           </p>
         </div>
         <div className="text-right ">
-            <span className="text-gray-700 text-lg italic"> — Arman Ali, Chairperson</span>
+          <span className="text-gray-700 text-lg italic">
+            {" "}
+            — Arman Ali, Chairperson
+          </span>
         </div>
       </div>
     </div>
   );
 }
+
+export default Services;

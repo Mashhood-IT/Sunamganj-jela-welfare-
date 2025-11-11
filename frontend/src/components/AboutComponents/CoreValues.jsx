@@ -1,6 +1,6 @@
 import { ICONS } from "../../assets/Icons";
 
-const values = [
+export const values = [
   {
     icon: (
       <ICONS.HeartHandshake className="w-8 h-8 text-(--main-green-color)" />
@@ -30,11 +30,11 @@ const values = [
   },
 ];
 
-export default function CoreValues() {
+const  CoreValues = () => {
   return (
     <section className="bg-white py-16">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
           Our Core Values
         </h2>
         <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
@@ -87,3 +87,4 @@ export default function CoreValues() {
     </section>
   );
 }
+export default CoreValues

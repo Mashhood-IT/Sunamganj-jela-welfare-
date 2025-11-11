@@ -76,7 +76,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link to="/membershipform" onClick={() => setIsOpen(false)}>
-              <button className=" btn btn-green w-full">
+              <button className=" btn btn-green ">
                 Become a Member
               </button>
             </Link>

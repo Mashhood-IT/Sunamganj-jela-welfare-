@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IMAGES } from "../../assets/Images";
 import { ICONS } from "../../assets/Icons";
+import SectionHeader from "../../constants/SectionHeader";
 
 const images = [
   { id: 1, src: IMAGES.BM1, alt: "Community meeting gathering" },
@@ -17,47 +18,33 @@ const images = [
 const BiennialMeetingGallery = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
-  const meetingDetails = {
-    title: "Biennial General Meeting of Sunamganj Jela Welfare Association UK",
-    date: "14th September 2025",
-  };
-
   const handlePrevious = (e) => {
     e.stopPropagation();
-    setSelectedImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setSelectedImageIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
   };
 
   const handleNext = (e) => {
     e.stopPropagation();
-    setSelectedImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setSelectedImageIndex((prev) =>
+      prev === images.length - 1 ? 0 : prev + 1
+    );
   };
 
   return (
     <div className="w-full bg-white px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-semibold tracking-wide uppercase border border-green-300">
-              Biennial General Meeting
-            </span>
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {meetingDetails.title}
-          </h2>
-
-          <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
-
-          <div className="flex flex-wrap justify-center gap-4 mt-4">
-            <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
-              <ICONS.Calendar className="w-5 h-5 text-green-600" />
-              <span className="text-gray-700 font-medium">
-                {meetingDetails.date}
-              </span>
-            </div>
-          </div>
-        </div>
+        <SectionHeader
+          tag="Biennial General Meeting"
+          heading={
+            <>
+              Biennial General Meeting of <br />
+              Sunamganj Jela Welfare Association UK
+            </>
+          }
+          date="14th September 2025"
+        />
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,7 +92,7 @@ const BiennialMeetingGallery = () => {
                 className="rounded-lg"
                 onClick={(e) => e.stopPropagation()}
               />
-              
+
               {/* Navigation Controls */}
               <div className="flex items-center justify-center gap-6 mt-6">
                 <button
@@ -115,11 +102,11 @@ const BiennialMeetingGallery = () => {
                 >
                   <ICONS.ChevronLeft className="w-8 h-8" />
                 </button>
-                
+
                 <span className="text-white font-semibold text-lg">
                   {selectedImageIndex + 1} / {images.length}
                 </span>
-                
+
                 <button
                   onClick={handleNext}
                   className="text-white cursor-pointer hover:text-[#FEAA53] transition-colors p-2 hover:bg-white/10 rounded-full"

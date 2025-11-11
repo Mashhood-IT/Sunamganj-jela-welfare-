@@ -3,7 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import StripeCheckout from "./StripeCheckout";
 import SignatureInput from "./SignatureInput";
-export default function MembershipForm() {
+const  MembershipForm = () => {
   const [formData, setFormData] = useState({
     title: "Mr",
     fullName: "",
@@ -614,3 +614,6 @@ export default function MembershipForm() {
     </div>
   );
 }
+
+
+export default MembershipForm

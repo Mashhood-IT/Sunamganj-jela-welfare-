@@ -198,38 +198,70 @@ export const DONATIONS_DATA = [
   },
 ];
 
+export const campaignContent = {
+  1: {
+    text: [
+      "Floods affect thousands of families in the Sunamganj District yearly. Houses are lost, streets are destroyed, and lives are disrupted. It is heartbreaking to see the extent of losses people make when the water floods.",
+      "We attempt to restore hope at Sunamganj Jela Welfare Association UK. Food, clean water, and shelter are our starting point in the flood relief work. We reach villages at the time when they need assistance most. When the flood is over, we assist the families in the rebuilding process.",
+      "Every donation assists a parent in feeding a child or repairing a roof that is in bad condition. It helps them have the strength to begin afresh. There is nothing we can do to stop the rain, but we can all alleviate the suffering it causes. Any act of kindness will make some person nearer to security and comfort. Disasters demolish, yet goodwill restores.",
+    ],
+  },
+  2: {
+    text: [
+      "It is our opinion that the most helpful one is the lasting one. The Self-Reliance Program empowers individuals to work and live comfortably. Families rely on haphazard jobs in most areas of Sunamganj. Once that ceases, hunger sets in. We train skills in this program that generate a stable income. Women are taught tailoring and minor trades. Men acquire art and agricultural skills. We also assist families in starting a small business.",
 
-export  const campaignContent = {
-    1: {
-      text: ["Floods affect thousands of families in the Sunamganj District yearly. Houses are lost, streets are destroyed, and lives are disrupted. It is heartbreaking to see the extent of losses people make when the water floods.",
-              "We attempt to restore hope at Sunamganj Jela Welfare Association UK. Food, clean water, and shelter are our starting point in the flood relief work. We reach villages at the time when they need assistance most. When the flood is over, we assist the families in the rebuilding process.",
-              "Every donation assists a parent in feeding a child or repairing a roof that is in bad condition. It helps them have the strength to begin afresh. There is nothing we can do to stop the rain, but we can all alleviate the suffering it causes. Any act of kindness will make some person nearer to security and comfort. Disasters demolish, yet goodwill restores."]
-    },
-    2: {
-      text: [
-        "It is our opinion that the most helpful one is the lasting one. The Self-Reliance Program empowers individuals to work and live comfortably. Families rely on haphazard jobs in most areas of Sunamganj. Once that ceases, hunger sets in. We train skills in this program that generate a stable income. Women are taught tailoring and minor trades. Men acquire art and agricultural skills. We also assist families in starting a small business.",
+      "This work changes lives. It provides individuals with something better than money. It provides them with pride and meaning. They are no longer the ones waiting to be helped, but they turn out to be the help. The Sunamganj Jela Welfare Association UK is undertaking this program with love and patience. Each individual whom we train is a seed of change in their society.",
+    ],
+  },
+  3: {
+    text: [
+      "Water is life. Safe water is difficult to access in most regions of Sunamganj. Individuals travel long distances to collect it. There are occasions when they become ill due to the water they drink. Our Clean Water Pump Project constructs water pumps in rural settings. Each pump provides clean drinking water for dozens of families. It saves them time (hours spent walking), makes them healthier, and guards against illnesses.",
+      "Joy prevails when a new pump comes to the village. Mothers worry less. Children drink without fear. Life is made easier in a manner that can never be expressed through words. The project itself is not complicated but effective. Clean water provides individuals with time to work, learn, and live. It turns struggle into relief.",
+    ],
+  },
+  4: {
+    text: [
+      "Night temperatures in Sunamganj may be freezing cold. A lot of individuals lack warm clothes and blankets to cover themselves. Children and the older generation are the worst hit when winter strikes. The Winter Blanket Donation Drive provides warmth to the people who need it the most. We take blankets, jackets, and winter packages and deliver them to the district villages. Every blanket we send out reminds a person that he is not forgotten.",
+      "It might be a trivial matter, yet to a person who is lying on a cold floor, it would be life. The affection is love, Bangladeshi community love, in the UK. It makes people remember that compassion can not be separated by distance.",
+      "Hope is restored to a weary heart when a blanket falls on two cold hands.",
+    ],
+  },
+  5: {
+    text: [
+      "Health is precious. In its absence, it all goes astray. A good number of families in Sunamganj are unable to pay money to buy medicine or a doctor visit. There are those who are too far to hospitals to seek help.",
+      "It is our Healthcare Support Program that assists individuals in such cases. We offer medicines, treatment expenses, and health education. We are quick in case of an emergency. Our volunteers provide relief and also refer patients to hospitals. We also concern ourselves with the Bangladeshi people in the UK. We assist individuals in locating a local healthcare center and directing them to welfare provisions. All people are entitled to care regardless of their place of residence.",
+      "Every time that we assist a person to be healed, we obtain the same peace. Health brings back dignity. It empowers individuals to have a dream once more.",
+    ],
+  },
+};
 
-        "This work changes lives. It provides individuals with something better than money. It provides them with pride and meaning. They are no longer the ones waiting to be helped, but they turn out to be the help. The Sunamganj Jela Welfare Association UK is undertaking this program with love and patience. Each individual whom we train is a seed of change in their society."
-      ]
-    },
-    3: {
-      text: [
-        "Water is life. Safe water is difficult to access in most regions of Sunamganj. Individuals travel long distances to collect it. There are occasions when they become ill due to the water they drink. Our Clean Water Pump Project constructs water pumps in rural settings. Each pump provides clean drinking water for dozens of families. It saves them time (hours spent walking), makes them healthier, and guards against illnesses.",
-        "Joy prevails when a new pump comes to the village. Mothers worry less. Children drink without fear. Life is made easier in a manner that can never be expressed through words. The project itself is not complicated but effective. Clean water provides individuals with time to work, learn, and live. It turns struggle into relief."
-      ]
-    },
-    4: {
-      text: [
-        "Night temperatures in Sunamganj may be freezing cold. A lot of individuals lack warm clothes and blankets to cover themselves. Children and the older generation are the worst hit when winter strikes. The Winter Blanket Donation Drive provides warmth to the people who need it the most. We take blankets, jackets, and winter packages and deliver them to the district villages. Every blanket we send out reminds a person that he is not forgotten.",
-        "It might be a trivial matter, yet to a person who is lying on a cold floor, it would be life. The affection is love, Bangladeshi community love, in the UK. It makes people remember that compassion can not be separated by distance.",
-        "Hope is restored to a weary heart when a blanket falls on two cold hands.",
-      ]
-    },
-    5: {
-      text: [
-        "Health is precious. In its absence, it all goes astray. A good number of families in Sunamganj are unable to pay money to buy medicine or a doctor visit. There are those who are too far to hospitals to seek help.",
-        "It is our Healthcare Support Program that assists individuals in such cases. We offer medicines, treatment expenses, and health education. We are quick in case of an emergency. Our volunteers provide relief and also refer patients to hospitals. We also concern ourselves with the Bangladeshi people in the UK. We assist individuals in locating a local healthcare center and directing them to welfare provisions. All people are entitled to care regardless of their place of residence.",
-        "Every time that we assist a person to be healed, we obtain the same peace. Health brings back dignity. It empowers individuals to have a dream once more.",
-      ]
-    }
-  };
+export const services = [
+  {
+    icon: ICONS.BookOpen,
+    title: "Education and Youth",
+    description:
+      "Education opens doors. We help children in Sunamganj go to school. We provide books, fees, and support. In the UK, we guide young people to stay proud of their heritage and build strong futures.",
+    color: "var(--main-green-color)",
+  },
+  {
+    icon: ICONS.HeartPulse,
+    title: "Health and Relief",
+    description:
+      "We help families during floods, illness, and hardship. During the COVID-19 pandemic, our volunteers gave food and medicine to those in need. We still offer relief when emergencies strike.",
+    color: "var(--main-orange-color)",
+  },
+  {
+    icon: ICONS.Home,
+    title: "Community Growth",
+    description:
+      "We help rebuild homes, support small projects, and improve safety. We believe that strong communities grow from shared effort.",
+    color: "var(--main-green-color)",
+  },
+  {
+    icon: ICONS.Globe,
+    title: "Culture and Unity",
+    description:
+      "In the UK, we give parties to celebrate our identity. These shows preserve our culture and make the new generations remain in touch with the Bangladeshi background.",
+    color: "var(--main-orange-color)",
+  },
+];
