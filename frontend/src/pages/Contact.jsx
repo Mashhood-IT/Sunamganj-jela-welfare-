@@ -21,8 +21,8 @@ const Contact = ({}) => {
         />
     <div className="lg:px-24">
       <WeAreAlwaysHere />
-      <div className="flex items-center w-full  ">
-        <div className="flex flex-col px-0.5 space-y-4 mb-4 lg:w-2/3  items-center justify-center">
+      <div className="flex  lg:flex-row flex-col items-center w-full  ">
+        <div className="flex flex-col px-4 md:px-12 space-y-4 mb-4 lg:w-2/3  items-center justify-center">
           <ForFamiliesAndCommunity />
           <ForSupportersAndDonors />
         </div>
@@ -30,8 +30,10 @@ const Contact = ({}) => {
           <ContactForm />
         </div>
       </div>
-      <OurPromise />
-      <div className="grid lg:grid-cols-2 mt-2  items-center justify-center">
+      <div className="px-0">
+      <OurPromise  />
+      </div>
+      <div className="grid lg:grid-cols-2 mt-6 px-4 md:px-12 space-y-4  items-center justify-center">
         <ForVolunteersAndPartners />
         <ReachingOut />
         <HowToStayConnected />

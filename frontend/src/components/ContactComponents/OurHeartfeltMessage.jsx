@@ -1,7 +1,7 @@
 import React from "react";
 
 const OurHeartfeltMessage = () => (
-  <section className="relative overflow-hidden bg-white">
+  <section className="relative overflow-hidde lg:px-0 px-5 bg-white">
     {/* Large diagonal background split */}
     <div className="absolute inset-0 bg-cream transform -skew-y-3 origin-top-left" />
     <div className="absolute top-0 right-0 w-2/3 h-full bg-linear-to-bl from-main-green/5 to-transparent transform skew-y-2" />
@@ -20,7 +20,7 @@ const OurHeartfeltMessage = () => (
       {/* Text content in flowing layout */}
       <div className="space-y-12 lg:ml-12">
         <div className="relative lg:pl-20">
-          <div className="absolute left-0 top-2 w-12 h-12 border-l-4 border-t-4 border-(--main-green-color)/30" />
+          <div className="absolute lg:left-0 -left-4 lg:top-2 -top-2 w-12 h-12 border-l-4 border-t-4 border-(--main-green-color)/30" />
           <p className="text-warm-gray text-md lg:text-lg leading-relaxed max-w-3xl">
             Speaking to us, you speak to people who have a lot of love in their
             hearts. We are not a big organization, we are a group of friends
@@ -39,7 +39,7 @@ const OurHeartfeltMessage = () => (
         </div>
 
         <div className="relative lg:pl-40 pt-8">
-          <div className="absolute left-8 -top-4 text-9xl font-bold text-(--main-green-color)/5 select-none">
+          <div className="absolute lg:left-8 lg:-top-4 -top-10 text-9xl font-bold text-(--main-green-color)/5 select-none">
             "
           </div>
           <p className="font-bold text-(--main-green-color) text-md lg:text-lg leading-relaxed max-w-2xl italic">

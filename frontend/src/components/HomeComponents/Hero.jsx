@@ -1,13 +1,24 @@
 import { Link } from "react-router-dom";
 import { IMAGES } from "../../assets/Images";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [isMobileScreen, setIsmMobileScreen] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth < 1024) {
+      setIsmMobileScreen(true);
+    } else {
+      setIsmMobileScreen(false);
+    }
+  }, [isMobileScreen]);
   return (
-    <section className="relative  mt-24 min-h-screen  bg-gray-100 lg:mt-16 flex flex-col lg:flex-row overflow-hidden py-8 lg:py-0">
-      <div className="w-full lg:w-1/2  flex flex-col text-black justify-center lg:items-start items-center px-6 sm:px-8 lg:px-20 mb-8 lg:mb-0">
+    <section className={`relative  mt-24 lg:pt-0 pt-20 ${isMobileScreen ? "h-[80vh]" :"h-screen" }  bg-gray-100 lg:mt-16 flex flex-col lg:flex-row overflow-hidden py-8 lg:py-0`}>
+      <div className="w-full lg:ml-3 lg:w-1/2  flex flex-col text-black justify-center lg:items-start items-center px-6 sm:px-8 lg:px-20 mb-8 lg:mb-0">
         <img
-          src={IMAGES.Logo}
+          src={IMAGES.Logo1}
           alt="Logo"
+          height={130}
+          width={130}
           className="mb-2 max-w-xs sm:max-w-md mx-auto lg:mx-0"
         />
 
@@ -21,13 +32,21 @@ const Hero = () => {
           Supporting communities from Bangladesh to the UK, making a difference
           one step at a time.
         </p>
-
-        <Link to="/donation-form">
-          <button className="group cursor-pointer relative  px-6 py-3 bg-[#065f46] text-white rounded-full font-semibold  hover:shadow-xl hover:shadow-[#065f46]/30 transition-all duration-300 hover:scale-105">
-            <span className="relative z-10">Donate Now</span>
-            <div className="absolute inset-0 bg-[#064e3b] transform scale-x-0  group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-          </button>
-        </Link>
+        <div className="flex gap-4 2xl:ml-3.5">
+          <Link to="/donation-form">
+            <button className="group cursor-pointer relative  px-6 py-3 bg-[#065f46] text-white rounded-full font-semibold  hover:shadow-xl hover:shadow-[#065f46]/30 transition-all duration-300 hover:scale-105">
+              <span className="relative z-10">Donate Now</span>
+              <div className="absolute inset-0 bg-[#064e3b] transform scale-x-0  group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            </button>
+          </Link>
+          {isMobileScreen && (
+            <Link to="/membershipform">
+              <button className="btn btn-transparent">
+                <span className="relative z-10">Become a Member</span>
+              </button>
+            </Link>
+          )}
+        </div>
       </div>
       <div className="w-full lg:w-1/2 flex space-x-4 sm:space-x-8 items-center justify-center px-4 relative">
         <div className="z-50 rounded-t-full bg-(--main-orange-color) px-2 pt-4 lg:mb-24 2xl:mb-44">

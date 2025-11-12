@@ -23,7 +23,7 @@ const Team = () => {
               <img
                 src={img}
                 alt={name}
-                className="w-20 h-20 rounded-full object-cover border-4 border-gray-100 shadow-md"
+                className="w-28 h-28 rounded-full object-contain border-4 border-gray-100 shadow-md"
               />
             </div>
             <div className="flex flex-col">

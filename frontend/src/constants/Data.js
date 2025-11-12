@@ -99,48 +99,53 @@ export const teamMembers = [
     role: "Chairman",
     img: IMAGES.Chairman,
   },
-  {
-    name: "Aman Ali",
-    role: "ChairPerson",
-    img: IMAGES.Chairperson,
-  },
+  // {
+  //   name: "Aman Ali",
+  //   role: "ChairPerson",
+  //   img: IMAGES.Chairperson,
+  // },
   {
     name: "Ex Councillor Ruhul Amin",
     role: "General Secretary",
     img: IMAGES.GS,
   },
   {
-    name: "Anwar  Kamal Dulal",
-    role: "Joint Secretary",
-    img: IMAGES.JS,
+    name: "Joynal Abedin",
+    role: "Senior Joint Secretary",
+    img: IMAGES.SGS,
   },
+  // {
+  //   name: "Anwar  Kamal Dulal",
+  //   role: "Joint Secretary",
+  //   img: IMAGES.JS,
+  // },
+  // {
+  //   name: "Bodor Udding",
+  //   role: "Vice ChairPerson",
+  //   img: IMAGES.VCP,
+  // },
   {
-    name: "Bodor Udding",
-    role: "Vice ChairPerson",
-    img: IMAGES.VCP,
-  },
-  {
-    name: "Mashuk Ahmed Sardar",
-    role: "1st Joint Secretary",
-    img: IMAGES.JS3,
+    name: "M A Qayyum Miah",
+    role: "Senior Vice Chairman",
+    img: IMAGES.SVC,
   },
   {
     name: "Md Abu Yasin Shuman",
     role: "Treasurer",
     img: IMAGES.Treasurer,
   },
-  {
-    name: "Md Raju Miah",
+  // {
+  //   name: "Md Raju Miah",
 
-    role: "Joint Secretary",
-    img: IMAGES.JS2,
-  },
-  {
-    name: "Ataur Rahman Ansar",
+  //   role: "Joint Secretary",
+  //   img: IMAGES.JS2,
+  // },
+  // {
+  //   name: "Ataur Rahman Ansar",
 
-    role: "Joint Secretary",
-    img: IMAGES.JS1,
-  },
+  //   role: "Vice Chairman",
+  //   img: IMAGES.JS1,
+  // },
 ];
 
 export const DONATIONS_DATA = [

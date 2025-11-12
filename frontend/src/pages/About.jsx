@@ -44,7 +44,7 @@ const About = () => {
       <OurJourney />
       <MeetingGallerySection />
       <Team />
-      <CEOMessage />
+      {/* <CEOMessage /> */}
       <CoreValues />
 
       <HowYouCanHelp />

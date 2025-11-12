@@ -39,7 +39,7 @@ const Footer = () => {
         {/* Brand Info */}
         <div className="lg:ml-2 ml-0">
           <div className="flex items-center gap-2 mb-4">
-            <img src={IMAGES.Logo} height={100} width={100} alt="" />
+            <img src={IMAGES.Logo1} height={100} width={100} alt="" />
             <span className="text-lg text-(--main-orange-color) font-semibold ">
               Sunamganj Jela Welfare
             </span>

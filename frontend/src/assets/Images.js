@@ -1,14 +1,16 @@
 export const IMAGES = {
-  Logo1: "./jela.webp",
+  Logo1: "./NewLogo.webp",
   OurStory: "./about-image.webp",
   // Team Members
   Chairperson: "./Chairperson.webp",
   Chairman: "./Chairman.webp",
+  SGS: "./SGS.webp",
   GS: "./GS.webp",
   JS: "./JS.webp",
   JS1: "./JS1.webp",
   JS2: "./JS2.webp",
   JS3: "./JS3.webp",
+  SVC: "./SVC.webp",
   Treasurer: "./Treasurer.webp",
   VCP: "./VCP.webp",
   donation2: "./donation2.webp",

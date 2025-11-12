@@ -1,5 +1,4 @@
 import { ICONS } from "../../assets/Icons";
-import ContactForm from "./ContactForm";
 
 const cards = [
   {
@@ -33,11 +32,11 @@ const WeAreAlwaysHere = () => (
   <>
     <div className="flex flex-col lg:px-24 items-stretch justify-center gap-10 py-16 ">
       <div className="flex flex-col  text-center lg:text-left">
-        <h2 className="lg:text-4xl text-2xl font-bold text-gray-900 pb-4">
+        <h2 className="lg:text-4xl text-2xl font-bold text-gray-900 mb-8">
           We Are Always Here
         </h2>
 
-        <div className="flex  gap-4 ">
+        <div className="flex lg:flex-row flex-col lg:px-0 px-7  gap-4 ">
           {cards.map((card, i) => (
             <div key={i}>
               <Card title={card.title} Icon={card.icons} text={card.text} />

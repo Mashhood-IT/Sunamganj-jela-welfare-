@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --main-green-color: #00A162;
-  --main-orange-color: #FEAA53;
+  --main-green-color: #00a162;
+  --main-orange-color: #feaa53;
 }
 
 .btn {
@@ -24,14 +24,25 @@
 .btn-green:hover {
   background-color: #008b55;
 }
+.btn-transparent {
+  background-color: transparent;
+  color: var(--main-green-color);
+  border: 2px solid #065f46;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+}
 
+.btn-transparent:hover {
+  background-color: #065f46;
+  color: white;
+  transform: scale(1.05);
+}
 .btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
-
-
-
 
 .goog-te-gadget span {
   display: none !important;
@@ -49,7 +60,7 @@
 
 #google_translate_element select {
   background: #000000;
-  color: #ffffff ;
+  color: #ffffff;
   border: none;
   outline: none;
   border-radius: 8px;
