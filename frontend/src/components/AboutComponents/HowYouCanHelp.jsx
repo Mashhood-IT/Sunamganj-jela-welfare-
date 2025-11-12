@@ -1,16 +1,22 @@
 import { ICONS } from "../../assets/Icons";
+import SectionHeader from "../../constants/SectionHeader";
 
-const  HowYouCanHelp = () => {
+const HowYouCanHelp = () => {
   return (
     <section className="bg-linear-to-b from-gray-50 to-white py-16">
       <div className="max-w-[1250px] mx-auto px-6">
         <div className="rounded-2xl shadow-xl bg-white/90 backdrop-blur-md p-10 md:p-14 text-center animate-fade-in">
-          <h2 className="text-2xl md:text-3xl font-bold text-black mb-6 tracking-tight">
-            How You Can Help
-          </h2>
-          <p className="text-gray-700 mb-8 text-lg">
-            You can join us in many ways. Every bit of help creates hope.
-          </p>
+          <SectionHeader
+            tag="How Can You Help"
+            heading={
+              <>
+                You can join us in many ways.
+                <br />
+                Every bit of help creates hope.
+              </>
+            }
+          />
+
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             <li className="flex flex-col items-center bg-gray-50 rounded-xl p-6 shadow hover:shadow-lg transition">
               <span className="mb-3">
@@ -46,7 +52,7 @@ const  HowYouCanHelp = () => {
             Your help turns small ideas into real change. Together, we can keep
             kindness moving from one home to another.
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 text-center">
+          <h2 className="text-xl md:text-2xl font-bold text-black mb-4 text-center">
             Looking Ahead
           </h2>
           <p className="text-center text-gray-700 mb-6 text-base md:text-lg">
@@ -56,13 +62,13 @@ const  HowYouCanHelp = () => {
             through care and respect. At Sunamganj Jela Welfare Association UK,
             our promise is simple:
           </p>
-          <p className="text-center text-green-700 font-semibold text-lg md:text-xl">
+          <p className="text-center text-green-700 font-semibold text-lg">
             Join us today — and let’s make tomorrow brighter together
           </p>
         </div>
       </div>
     </section>
   );
-}
+};
 
-export default HowYouCanHelp
+export default HowYouCanHelp;

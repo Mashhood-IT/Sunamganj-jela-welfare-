@@ -31,28 +31,19 @@ const Card = ({ title, Icon, text }) => (
 
 const WeAreAlwaysHere = () => (
   <>
-    <div className="flex flex-col lg:flex-row items-stretch justify-center gap-10 py-16 px-4">
-      <div className="flex flex-col lg:w-2/5 text-center lg:text-left">
+    <div className="flex flex-col lg:px-24 items-stretch justify-center gap-10 py-16 ">
+      <div className="flex flex-col  text-center lg:text-left">
         <h2 className="lg:text-4xl text-2xl font-bold text-gray-900 pb-4">
           We Are Always Here
         </h2>
 
-        <div className="flex flex-wrap gap-4 items-stretch">
+        <div className="flex  gap-4 ">
           {cards.map((card, i) => (
-            <div
-              key={i}
-              className={`basis-full ${
-                i < 2 ? "lg:basis-[calc(50%-0.5rem)]" : "lg:basis-full"
-              }`}
-            >
+            <div key={i}>
               <Card title={card.title} Icon={card.icons} text={card.text} />
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="w-full max-w-xl">
-        <ContactForm />
       </div>
     </div>
   </>

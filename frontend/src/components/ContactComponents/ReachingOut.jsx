@@ -2,7 +2,7 @@ import React from "react";
 import { ICONS } from "../../assets/Icons";
 
 const ReachingOut = () => (
-  <div className="w-full p-4">
+  <div>
       <div className="bg-white rounded-lg p-8  border-l-4 border-(--main-orange-color) shadow-sm">
         <div className="flex items-center mb-6">
           <div className="w-12 h-12 bg-(--main-orange-color) rounded-full flex items-center justify-center mr-4">

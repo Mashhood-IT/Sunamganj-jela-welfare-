@@ -38,7 +38,7 @@ const Services = () => {
         </div>
 
         <div className="lg:text-center lg:text-lg text-md mt-12">
-          <h1>Leadership with Heart</h1>
+          <h1 className="text2xl md:text-3xl font-bold mb-3">Leadership with Heart</h1>
           <p>
             Our leaders serve with care. The chairperson, Arman Ali, and the
             General Secretary, Neazul Islam Chowdhury, lead by example. They

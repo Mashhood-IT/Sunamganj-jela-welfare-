@@ -14,26 +14,31 @@ import ContactForm from "../components/ContactComponents/ContactForm";
 const Contact = ({}) => {
   return (
     <>
+
       <HeroSection
         title="Contact Us"
         description="Let's Connect and Make a Difference Together"
-      />
+        />
+    <div className="lg:px-24">
       <WeAreAlwaysHere />
-
-      <div className="flex lg:flex-row mb-4  flex-col items-center justify-center">
-        <ForFamiliesAndCommunity />
-        <ForSupportersAndDonors />
+      <div className="flex items-center w-full  ">
+        <div className="flex flex-col px-0.5 space-y-4 mb-4 lg:w-2/3  items-center justify-center">
+          <ForFamiliesAndCommunity />
+          <ForSupportersAndDonors />
+        </div>
+        <div className="">
+          <ContactForm />
+        </div>
       </div>
       <OurPromise />
-      <div className="grid lg:grid-cols-2 items-center justify-center">
+      <div className="grid lg:grid-cols-2 mt-2  items-center justify-center">
         <ForVolunteersAndPartners />
         <ReachingOut />
         <HowToStayConnected />
       </div>
-      <div className="flex lg:flex-row  flex-col items-center justify-center">
         <OurHeartfeltMessage />
         <JoinUs />
-      </div>
+        </div>
     </>
   );
 };

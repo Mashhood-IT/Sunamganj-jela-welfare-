@@ -3,7 +3,7 @@ import { ICONS } from "../assets/Icons";
 
 const SectionHeader = ({ heading,  date, tag  }) => {
   return (
-    <div className="text-center mb-16">
+    <div className="text-center mb-8">
       {/* Tag / Slogan Badge */}
       {tag && (
         <div className="inline-block mb-4">
@@ -14,7 +14,7 @@ const SectionHeader = ({ heading,  date, tag  }) => {
       )}
 
       {/* Heading */}
-      <h2 className="text-4xl md:text-3xl font-bold text-gray-900 mb-4">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
         {heading}
       </h2>
 
