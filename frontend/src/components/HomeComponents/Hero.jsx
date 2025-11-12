@@ -35,14 +35,14 @@ const Hero = () => {
         <div className="flex gap-4 2xl:ml-3.5">
           <Link to="/donation-form">
             <button className="group cursor-pointer relative  px-6 py-3 bg-[#065f46] text-white rounded-full font-semibold  hover:shadow-xl hover:shadow-[#065f46]/30 transition-all duration-300 hover:scale-105">
-              <span className="relative z-10">Donate Now</span>
+              <span className="relative z-10 md:text-md text-xs">Donate Now</span>
               <div className="absolute inset-0 bg-[#064e3b] transform scale-x-0  group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </button>
           </Link>
           {isMobileScreen && (
             <Link to="/membershipform">
               <button className="btn btn-transparent">
-                <span className="relative z-10">Become a Member</span>
+                <span className="relative z-10 md:text-md text-xs">Become a Member</span>
               </button>
             </Link>
           )}
