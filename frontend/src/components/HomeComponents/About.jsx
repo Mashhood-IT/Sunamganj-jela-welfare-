@@ -141,7 +141,7 @@
               </div>
               <div className="mt-8 flex flex-col items-center justify-center sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
                 <Link to="/about" className="w-full sm:w-auto">
-                  <button className="w-full sm:w-auto group cursor-pointer relative px-6 py-3 bg-[#065f46] text-white rounded-full font-semibold overflow-hidden hover:shadow-xl hover:shadow-[#065f46]/30 transition-all duration-300 hover:scale-105">
+                  <button className=" group cursor-pointer relative px-6 py-3 bg-[#065f46] text-white rounded-full font-semibold overflow-hidden hover:shadow-xl hover:shadow-[#065f46]/30 transition-all duration-300 hover:scale-105">
                     <span className="relative z-10">Learn Our Story</span>
                     <div className="absolute inset-0 bg-[#064e3b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                   </button>
