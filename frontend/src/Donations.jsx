@@ -25,10 +25,10 @@ const Donations = () => {
       <div className="min-h-screen bg-gray-50 py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="md:text-4xl text-2xl font-bold text-gray-900 mb-4">
               Our Donation Campaigns
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="md:text-lg text-md text-gray-600">
               Choose a cause that matters to you and make a difference today
             </p>
           </div>
