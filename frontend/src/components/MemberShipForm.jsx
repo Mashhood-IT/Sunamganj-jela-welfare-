@@ -3,7 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import StripeCheckout from "./StripeCheckout";
 import SignatureInput from "./SignatureInput";
-const  MembershipForm = () => {
+const MembershipForm = () => {
   const [formData, setFormData] = useState({
     title: "Mr",
     fullName: "",
@@ -543,7 +543,7 @@ const  MembershipForm = () => {
                       <span className="text-xs text-gray-500">
                         (Company use only)
                       </span>
-                    </> 
+                    </>
                   }
                   value={formData.signatureOfApprover}
                   onChange={handleChange}
@@ -613,7 +613,6 @@ const  MembershipForm = () => {
       )}
     </div>
   );
-}
+};
 
-
-export default MembershipForm
+export default MembershipForm;
