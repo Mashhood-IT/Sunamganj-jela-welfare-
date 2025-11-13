@@ -126,7 +126,7 @@ const About = () => {
                     }`}
                     style={{ transitionDelay: `${100 + index * 100}ms` }}
                   >
-                    <span className="md:size-5 size-4 bg-[#065f46]/10 rounded-lg flex items-center justify-center md:mb-3 mb-2 group-hover:bg-[#065f46] transition-colors duration-300">
+                    <span className="size-5 bg-[#065f46]/10 rounded-lg flex items-center justify-center md:mb-3 mb-2 group-hover:bg-[#065f46] transition-colors duration-300">
                       <Icon className="md:size-5 size-4 text-(--main-green-color) group-hover:text-white transition-colors duration-300" />
                     </span>
                     <span className="md:text-2xl text-xl font-bold text-gray-900 mb-1">
