@@ -243,7 +243,7 @@ const  MembershipForm = () => {
         </div>
       ) : (
         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-sm p-8">
-          <h2 className="text-3xl font-bold mb-2 text-green-700">
+          <h2 className="text:2xl md:text-3xl font-bold mb-2 text-green-700">
             Membership Application
           </h2>
           <p className="text-gray-600 mb-8">
