@@ -246,7 +246,7 @@ const  MembershipForm = () => {
           <h2 className="text:2xl md:text-3xl font-bold mb-2 text-green-700">
             Membership Application
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-600 md:text-lg text-md mb-8">
             Please fill out all required fields marked with *
           </p>
 
