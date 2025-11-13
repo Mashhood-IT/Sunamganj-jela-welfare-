@@ -97,6 +97,9 @@ export const teamMembers = [
   {
     name: "Engineer Habibur Rahman",
     role: "Chairman",
+    address: "98 Lincoln Avenue, Rush Green, Romford, RM7 0SJ",
+    village: "Bhurakhali Jagannatpur, Sunamganj",
+    phone: "07429023462",
     img: IMAGES.Chairman,
   },
   // {
@@ -132,7 +135,27 @@ export const teamMembers = [
   {
     name: "Md Abu Yasin Shuman",
     role: "Treasurer",
+    address: "37 Hitherbroom Road, Hayes, UB3- 3AD",
+    village: "Borokapon, Jagannatpur, Sunamgan",
+    phone: "07429023462",
     img: IMAGES.Treasurer,
+  },
+  {
+    name: "Bodor Shamsu Uddin",
+    role: "Vice Chairman",
+    address: "214 Boleyn road London E7 9QJ",
+    village: "Ishakpur  Tana Jagannathpur",
+    phone: "+447984034057",
+    img: IMAGES.VC,
+  },
+  {
+    name: "MD Abdus Sabur",
+    role: "Sports Secretary",
+    address: "49 Braven avenue IG 11 9NW",
+    "P/O":"Sreeramishi Bazar Jogonnath pur, Sunamgonj",
+    village: "Sreeramishi",
+    phone: "+447984034057",
+    img: IMAGES.SS,
   },
   // {
   //   name: "Md Raju Miah",
@@ -140,12 +163,12 @@ export const teamMembers = [
   //   role: "Joint Secretary",
   //   img: IMAGES.JS2,
   // },
-  // {
-  //   name: "Ataur Rahman Ansar",
+  {
+    name: "Ataur Rahman Ansar",
 
-  //   role: "Vice Chairman",
-  //   img: IMAGES.JS1,
-  // },
+    role: "Vice Chairman",
+    img: IMAGES.VC1,
+  },
 ];
 
 export const DONATIONS_DATA = [
