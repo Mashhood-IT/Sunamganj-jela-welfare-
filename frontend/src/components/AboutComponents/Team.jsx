@@ -21,7 +21,7 @@ const Team = () => {
               key={name}
               className="group relative bg-white rounded-2xl shadow-lg cursor-pointer hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
             >
-              <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-br from-emerald-500 to-teal-600  transition-opacity duration-300" />
+              <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-br from-(--main-green-color) to-teal-600  transition-opacity duration-300" />
               <div className="relative p-6">
                 <div className="flex justify-center mb-4">
                   <div className="relative">
