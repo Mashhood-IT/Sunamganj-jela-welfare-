@@ -12,7 +12,7 @@ const Hero = () => {
     }
   }, [isMobileScreen]);
   return (
-    <section className={`relative  mt-24 lg:pt-0 pt-20 ${isMobileScreen ? "h-[80vh]" :"h-screen" }  bg-gray-100 lg:mt-16 flex flex-col lg:flex-row overflow-hidden py-8 lg:py-0`}>
+    <section className={`relative  mt-24 lg:pt-0 pt-12 ${isMobileScreen ? "h-[80vh]" :"h-screen" }  bg-gray-100 lg:mt-16 flex flex-col lg:flex-row overflow-hidden py-8 lg:py-0`}>
       <div className="w-full lg:ml-3 lg:w-1/2  flex flex-col text-black justify-center lg:items-start items-center px-6 sm:px-8 lg:px-20 mb-8 lg:mb-0">
         <img
           src={IMAGES.Logo1}
